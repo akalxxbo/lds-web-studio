@@ -1,0 +1,129 @@
+{
+  "name": "LDS AI Labs - Captación de Leads & Notificación Multicanal",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "lead-capture",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "node-webhook-lead",
+      "name": "Webhook Lead Web LDS"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO public.leads (full_name, email, phone, company, service_interest, monthly_budget, project_description, metadata)\nVALUES (\n  $1, $2, $3, $4, $5, $6, $7, $8::jsonb\n)\nRETURNING id, created_at;",
+        "queryParams": "={{ $json.body.fullName }},={{ $json.body.email }},={{ $json.body.phone || null }},={{ $json.body.company || null }},={{ $json.body.serviceInterest }},={{ $json.body.budget || null }},={{ $json.body.projectDescription }},={{ JSON.stringify($json.body.metadata || {}) }}"
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        260,
+        0
+      ],
+      "id": "node-supabase-insert",
+      "name": "Guardar en Supabase"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"success\": true,\n  \"message\": \"Lead procesado correctamente por n8n y almacenado en Supabase\",\n  \"leadId\": \"{{ $json.id }}\",\n  \"timestamp\": \"{{ $json.created_at }}\"\n}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        500,
+        -100
+      ],
+      "id": "node-respond-webhook",
+      "name": "Respuesta Webhook 200 OK"
+    },
+    {
+      "parameters": {
+        "chatId": "YOUR_TELEGRAM_CHAT_ID",
+        "text": "=🚀 *¡NUEVO LEAD REGISTRADO EN LDS AI LABS!* 🚀\n\n👤 *Nombre:* {{ $('Webhook Lead Web LDS').item.json.body.fullName }}\n📧 *Email:* {{ $('Webhook Lead Web LDS').item.json.body.email }}\n🏢 *Empresa:* {{ $('Webhook Lead Web LDS').item.json.body.company || 'No especificada' }}\n📱 *Teléfono:* {{ $('Webhook Lead Web LDS').item.json.body.phone || 'No especificado' }}\n🎯 *Servicio:* {{ $('Webhook Lead Web LDS').item.json.body.serviceInterest }}\n💰 *Presupuesto:* {{ $('Webhook Lead Web LDS').item.json.body.budget || 'No indicado' }}\n📝 *Descripción:* {{ $('Webhook Lead Web LDS').item.json.body.projectDescription }}\n\n🔗 _Registrado en Supabase con ID: {{ $json.id }}_",
+        "additionalFields": {
+          "parse_mode": "Markdown"
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        500,
+        100
+      ],
+      "id": "node-notify-telegram",
+      "name": "Alerta Telegram Inmediata"
+    },
+    {
+      "parameters": {
+        "fromEmail": "contacto@lds-ai.labs",
+        "toEmail": "={{ $('Webhook Lead Web LDS').item.json.body.email }}",
+        "subject": "Hemos recibido tu solicitud de auditoría - LDS AI & Web Labs",
+        "html": "=<div style=\"font-family: 'Segoe UI', Arial, sans-serif; background-color: #001A42; color: #FFFFFF; padding: 30px; border-radius: 12px;\">\n  <h2 style=\"color: #D8E2FF;\">¡Hola {{ $('Webhook Lead Web LDS').item.json.body.fullName }}!</h2>\n  <p>Gracias por tu interés en nuestras soluciones de desarrollo web, automatizaciones con n8n y agentes de IA.</p>\n  <p>Nuestro equipo y nuestro agente de diagnóstico ya están revisando la información de tu proyecto para preparar una <strong>auditoría técnica preliminar sin costo</strong>.</p>\n  <hr style=\"border: 1px solid rgba(255,255,255,0.15); margin: 20px 0;\" />\n  <p style=\"font-size: 14px; color: #D8E2FF;\">Te contactaremos en menos de 24 horas laborables.</p>\n  <p style=\"color: #FFFFFF; font-weight: bold;\">LDS AI & Web Labs</p>\n</div>"
+      },
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        740,
+        100
+      ],
+      "id": "node-email-client",
+      "name": "Email de Bienvenida al Cliente"
+    }
+  ],
+  "connections": {
+    "Webhook Lead Web LDS": {
+      "main": [
+        [
+          {
+            "node": "Guardar en Supabase",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar en Supabase": {
+      "main": [
+        [
+          {
+            "node": "Respuesta Webhook 200 OK",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Alerta Telegram Inmediata",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Alerta Telegram Inmediata": {
+      "main": [
+        [
+          {
+            "node": "Email de Bienvenida al Cliente",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

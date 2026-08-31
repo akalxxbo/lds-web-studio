@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0"/>
+  <title>LDS | Desarrollo Web Moderno & Landing Pages de Alta Conversión</title>
+  <meta name="description" content="Especialistas en diseño y desarrollo de páginas web ultra-rápidas, landing pages de alto impacto y sitios web potenciados con Supabase, n8n e Inteligencia Artificial."/>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-surface-variant": "#5a6a85",
+            "surface-container-lowest": "#000F29",
+            "background": "#ffffff",
+            "on-surface": "#001a42",
+            "on-secondary-fixed": "#001a42",
+            "on-secondary": "#122f5f",
+            "secondary-fixed": "#d8e2ff",
+            "secondary": "#2563eb",
+            "border-subtle": "rgba(0, 26, 66, 0.08)"
+          },
+          fontFamily: {
+            "headline": ["Plus Jakarta Sans", "sans-serif"],
+            "body": ["Inter", "sans-serif"]
+          },
+          maxWidth: {
+            "container-max": "1240px"
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Estilos Personalizados Mobile-First -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-[#f7f9fc] font-body text-on-surface antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed relative overflow-x-hidden">
+
+  <!-- Capa Unificada de Fondo Monograma Parallax con aceleración por GPU -->
+  <div id="lds-monogram-bg" class="monogram-parallax-layer" aria-hidden="true"></div>
+
+  <!-- ==================== HEADER / NAVBAR ==================== -->
+  <header class="fixed top-0 w-full z-50 lds-nav">
+    <div class="h-16 sm:h-20 max-w-container-max mx-auto px-4 sm:px-8 flex items-center justify-between">
+      
+      <!-- Brand Logo & Name -->
+      <a href="#" class="flex items-center gap-2 sm:gap-3 group py-1" aria-label="LDS Automate & Web Dev">
+        <div class="flex items-center justify-center px-2 py-1 sm:px-2.5 sm:py-1.5 rounded-xl bg-[#F7F3E7] border border-[#e6decc] shadow-sm group-hover:bg-[#f0ece0] group-hover:border-[#c8beaa] group-hover:shadow-md transition-all flex-shrink-0">
+          <img src="logo.png" alt="LDS Automate & Web Dev" class="h-8 sm:h-9 md:h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-105">
+        </div>
+        <div class="flex flex-col">
+          <span class="font-headline font-extrabold text-xs lg:text-[12px] xl:text-[13px] tracking-[0.10em] lg:tracking-[0.12em] text-on-secondary-fixed uppercase leading-tight group-hover:text-secondary transition-colors whitespace-nowrap">
+            AUTOMATE &amp; WEB DEV
+          </span>
+        </div>
+      </a>
+      
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-4 xl:gap-6 text-xs xl:text-sm font-semibold">
+        <a href="#servicios" class="text-on-secondary hover:text-secondary transition-colors">Servicios</a>
+        <a href="#tipos-web" class="text-on-secondary hover:text-secondary transition-colors">Soluciones</a>
+        <a href="#diferenciales" class="text-on-secondary hover:text-secondary transition-colors">Por Qué LDS</a>
+        <a href="#showroom" class="text-on-secondary hover:text-secondary transition-colors flex items-center gap-1.5 font-bold">
+          <span class="live-dot-green"></span> Demo IA
+        </a>
+        <a href="#metodologia" class="text-on-secondary hover:text-secondary transition-colors">Cómo Trabajamos</a>
+        <a href="#clientes" class="text-on-secondary hover:text-secondary transition-colors">Clientes</a>
+      </nav>
+
+      <!-- Desktop CTA -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="#auditoria" class="bg-on-secondary-fixed text-white px-4 xl:px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-on-secondary hover:shadow-md transition-all flex items-center gap-1.5 whitespace-nowrap">
+          <span>Pedir Presupuesto</span>
+          <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="lg:hidden p-2 text-on-secondary-fixed focus:outline-none" aria-label="Abrir menú">
+        <span class="material-symbols-outlined text-2xl">menu</span>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-border-subtle px-5 py-5 shadow-xl">
+      <nav class="flex flex-col gap-3 text-sm font-semibold">
+        <a href="#servicios" class="text-on-secondary hover:text-secondary py-1 mobile-link">Nuestros Servicios</a>
+        <a href="#tipos-web" class="text-on-secondary hover:text-secondary py-1 mobile-link">Soluciones Adaptadas</a>
+        <a href="#diferenciales" class="text-on-secondary hover:text-secondary py-1 mobile-link">¿Por qué elegirnos?</a>
+        <a href="#showroom" class="text-secondary font-bold py-1 flex items-center gap-2 mobile-link">
+          <span class="live-dot-green"></span> Probar Asistente Demo
+        </a>
+        <a href="#metodologia" class="text-on-secondary hover:text-secondary py-1 mobile-link">Cómo Trabajamos</a>
+        <a href="#clientes" class="text-on-secondary hover:text-secondary py-1 mobile-link">Clientes & Casos de Éxito</a>
+        <div class="pt-3 border-t border-border-subtle">
+          <a href="#auditoria" class="btn-lds-primary w-full py-3 rounded-xl text-center text-xs uppercase tracking-wider flex items-center justify-center gap-2 mobile-link">
+            <span>Pedir Presupuesto Web</span>
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="w-full pt-16 sm:pt-20">
+    <div class="flex flex-col w-full">
+
+      <!-- ==================== HERO SECTION (WEB & AUTOMATIZACIONES) ==================== -->
+      <section class="w-full px-4 sm:px-8 lg:px-12 py-10 sm:py-16 relative z-10 max-w-container-max mx-auto">
+        
+        <div class="bg-[#F7F3E7] rounded-3xl p-6 sm:p-10 lg:p-12 border border-[#001A42]/10 shadow-xl flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+          <!-- Hero Text (order-2 en móvil para quedar debajo de la imagen, lg:order-1 en desktop) -->
+          <div class="flex-1 flex flex-col items-start gap-4 sm:gap-6 text-left order-2 lg:order-1">
+
+            <h1 class="font-headline text-3xl sm:text-4xl lg:text-5xl font-extrabold text-on-secondary-fixed leading-tight tracking-tight">
+              Creamos Webs y Automatizaciones que <span class="text-secondary">Convierten Visitas en Clientes</span>
+            </h1>
+
+            <p class="text-sm sm:text-base lg:text-lg text-on-secondary-variant leading-relaxed font-normal">
+              Diseñamos tu escaparate digital a medida con páginas web ultrarrápidas, elegantes y optimizadas para móviles y Google. Integramos automatizaciones inteligentes (Supabase, n8n) y contenido publicitario generado con la última tecnología del mercado para hacer crecer tu negocio, todo desde un mismo sitio.
+            </p>
+
+            <!-- 3 Botones de Selección Directa al Formulario (Centrados, los 3 con fondo blanco) -->
+            <div class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 w-full pt-2">
+              
+              <!-- 1. Quiero mi web -->
+              <a href="#auditoria" data-service="web_corporativa" class="hero-cta-btn bg-white hover:bg-[#F0F4FF] text-on-secondary-fixed border-2 border-on-secondary-fixed/15 hover:border-secondary w-full sm:w-auto px-5 sm:px-6 py-3.5 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all text-center">
+                <span class="material-symbols-outlined text-lg sm:text-xl text-secondary">language</span>
+                <span>Quiero mi web</span>
+              </a>
+
+              <!-- 2. Quiero un agente de WhatsApp -->
+              <a href="#auditoria" data-service="agente_whatsapp" class="hero-cta-btn bg-white hover:bg-[#F0F4FF] text-on-secondary-fixed border-2 border-on-secondary-fixed/15 hover:border-secondary w-full sm:w-auto px-5 sm:px-6 py-3.5 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all text-center">
+                <span class="material-symbols-outlined text-lg sm:text-xl text-emerald-600">chat</span>
+                <span>Quiero un agente de WhatsApp</span>
+              </a>
+
+              <!-- 3. Quiero un agente por voz -->
+              <a href="#auditoria" data-service="agente_voz" class="hero-cta-btn bg-white hover:bg-[#F0F4FF] text-on-secondary-fixed border-2 border-on-secondary-fixed/15 hover:border-secondary w-full sm:w-auto px-5 sm:px-6 py-3.5 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all text-center">
+                <span class="material-symbols-outlined text-lg sm:text-xl text-secondary">call</span>
+                <span>Quiero un agente por voz</span>
+              </a>
+
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="flex flex-wrap items-center justify-center sm:justify-start gap-3 sm:gap-4 text-xs font-semibold text-on-surface-variant pt-2 w-full">
+              <span class="flex items-center gap-1"><span class="material-symbols-outlined text-emerald-600 text-sm">check</span> Carga en menos de 1.5s</span>
+              <span class="flex items-center gap-1"><span class="material-symbols-outlined text-emerald-600 text-sm">check</span> 100% Adaptada a Móvil</span>
+              <span class="flex items-center gap-1"><span class="material-symbols-outlined text-emerald-600 text-sm">check</span> Código Limpio Sin WordPress Pesado</span>
+            </div>
+
+            <!-- Pastilla de Servicios Destacados (Ubicada debajo de los ticks) -->
+            <div class="inline-flex items-center justify-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-fixed/40 text-on-secondary-fixed text-xs font-bold border border-secondary-fixed mx-auto sm:mx-0 mt-1">
+              <span class="live-dot-green"></span>
+              <span>Webs de Alta Conversión • Automatizaciones • Creatividad Digital</span>
+            </div>
+
+          </div>
+
+          <!-- Hero Image (order-1 en móvil para quedar arriba del texto, lg:order-2 en desktop) -->
+          <div class="flex-1 w-full relative order-1 lg:order-2">
+            <div class="relative w-full aspect-[16/11] sm:aspect-[16/10] rounded-2xl overflow-hidden shadow-lg border border-[#001A42]/10 bg-[#F7F3E7]">
+              <img 
+                alt="LDS Web & Landing Page Studio" 
+                class="w-full h-full object-cover object-[center_18%] mix-blend-multiply opacity-95 transition-transform duration-500 hover:scale-105" 
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDybtn6a-eyoTLWKdmcm11FU_lZEpZ3niUUiUeE78hXYgiG8tI9PXxaylvss_mVQejBAVZjUtuDHQff6HO2pa_mTqzKqk4B0WBYeJTIcSMdG5ce8SH3WRE3gYWx_taR6wcH1OPH2e1_UGnLOqqEaEFaQFlzhL1hyuixy7yAUi4cextQern6KY7NjZf04Z4ebVurPhSzCT_nIVVqxwzyooXeQtVH85riyv11WhnsLCdW55pR4ieTWMO_b7vfZ8TZXRw8OmQ"
+              />
+              <div class="absolute inset-0 bg-gradient-to-tr from-on-secondary-fixed/15 to-transparent pointer-events-none"></div>
+              
+              <div class="absolute bottom-2.5 left-2.5 right-2.5 py-2 px-3.5 rounded-xl bg-[#F7F3E7]/90 backdrop-blur-md shadow-md border border-[#001A42]/15 flex items-center justify-between text-xs">
+                <div class="flex items-center gap-2 font-mono font-bold text-on-secondary-fixed">
+                  <span class="live-dot-green"></span>
+                  <span>Webs de Alto Rendimiento LDS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ==================== METRICS STRIP ==================== -->
+      <section class="w-full px-4 sm:px-8 py-6 sm:py-8 max-w-container-max mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+          <div class="flex flex-col items-center text-center gap-1 bg-white p-6 sm:p-8 rounded-3xl border border-border-subtle shadow-lg hover:shadow-xl transition-all">
+            <span class="font-headline text-2xl sm:text-4xl font-extrabold text-on-secondary-fixed">&lt;1.5 seg</span>
+            <span class="text-[11px] sm:text-xs uppercase tracking-wider text-on-secondary font-bold">Velocidad de Carga</span>
+          </div>
+          <div class="flex flex-col items-center text-center gap-1 bg-white p-6 sm:p-8 rounded-3xl border border-border-subtle shadow-lg hover:shadow-xl transition-all">
+            <span class="font-headline text-2xl sm:text-4xl font-extrabold text-on-secondary-fixed">100%</span>
+            <span class="text-[11px] sm:text-xs uppercase tracking-wider text-on-secondary font-bold">Optimización Móvil</span>
+          </div>
+          <div class="flex flex-col items-center text-center gap-1 bg-white p-6 sm:p-8 rounded-3xl border border-border-subtle shadow-lg hover:shadow-xl transition-all">
+            <span class="font-headline text-2xl sm:text-4xl font-extrabold text-on-secondary-fixed">SEO Listo</span>
+            <span class="text-[11px] sm:text-xs uppercase tracking-wider text-on-secondary font-bold">Posicionamiento en Google</span>
+          </div>
+          <div class="flex flex-col items-center text-center gap-1 bg-white p-6 sm:p-8 rounded-3xl border border-border-subtle shadow-lg hover:shadow-xl transition-all">
+            <span class="font-headline text-2xl sm:text-4xl font-extrabold text-on-secondary-fixed">0 Plugins</span>
+            <span class="text-[11px] sm:text-xs uppercase tracking-wider text-on-secondary font-bold">Inseguros o Pesados</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== NUESTRO PUNTO FUERTE: SERVICIOS PRINCIPALES ==================== -->
+      <section id="servicios" class="w-full px-4 sm:px-8 lg:px-12 py-10 sm:py-20 scroll-mt-16">
+        <div class="max-w-container-max mx-auto">
+          
+          <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-14 lds-cream-card p-6 sm:p-10 rounded-3xl">
+            <span class="text-xs uppercase tracking-widest text-secondary font-bold mb-2 block">Nuestros 3 Pilares</span>
+            <h2 class="font-headline text-2xl sm:text-3xl lg:text-4xl font-extrabold text-on-secondary-fixed">
+              Servicios Diseñados para Escalar Tu Negocio
+            </h2>
+            <p class="text-xs sm:text-base text-on-secondary mt-2">
+              Unificamos presencia web de alta conversión, automatización inteligente y marketing con IA desde un mismo sitio.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-6 lg:gap-8">
+            
+            <!-- Bloque 1: Presencia Digital -->
+            <div class="pillar-card bg-white p-5 sm:p-10 lg:p-11 rounded-2xl sm:rounded-3xl border-2 border-secondary/40 shadow-md md:shadow-xl hover:shadow-2xl flex flex-col gap-3.5 sm:gap-5 transition-all">
+              <button class="pillar-toggle w-full flex items-center justify-between text-left focus:outline-none cursor-pointer md:cursor-default" type="button" aria-expanded="false">
+                <div class="flex items-center gap-3 sm:gap-4">
+                  <div class="w-11 h-11 sm:w-14 sm:h-14 rounded-2xl bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-bold flex-shrink-0">
+                    <span class="material-symbols-outlined text-2xl sm:text-3xl">language</span>
+                  </div>
+                  <h3 class="font-headline font-bold text-base sm:text-2xl text-on-secondary-fixed">Presencia Digital</h3>
+                </div>
+                <span class="material-symbols-outlined pillar-chevron text-secondary text-2xl md:hidden transition-transform duration-300">expand_more</span>
+              </button>
+              
+              <div class="pillar-content hidden md:flex flex-col gap-3.5 sm:gap-5 pt-1">
+                <p class="text-xs sm:text-sm text-on-secondary leading-relaxed">
+                  Webs y landing pages ultra-rápidas, elegantes y optimizadas para móviles y Google. Diseño a medida, sin plantillas genéricas, pensado para convertir visitas en clientes.
+                </p>
+                <ul class="text-xs sm:text-sm text-on-secondary space-y-2 sm:space-y-2.5 mt-auto pt-3.5 sm:pt-5 border-t border-border-subtle">
+                  <li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-base">check_circle</span> Diseño exclusivo a medida sin plantillas</li>
+                  <li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-base">check_circle</span> Optimización móvil, Core Web Vitals y SEO</li>
+                  <li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-base">check_circle</span> Estructura pensada para convertir visitas en clientes</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Bloque 2: Automatización con IA -->
+            <div class="pillar-card bg-white p-5 sm:p-10 lg:p-11 rounded-2xl sm:rounded-3xl border-2 border-secondary/40 shadow-md md:shadow-xl hover:shadow-2xl flex flex-col gap-3.5 sm:gap-5 transition-all">
+              <button class="pillar-toggle w-full flex items-center justify-between text-left focus:outline-none cursor-pointer md:cursor-default" type="button" aria-expanded="false">
+                <div class="flex items-center gap-3 sm:gap-4">
+                  <div class="w-11 h-11 sm:w-14 sm:h-14 rounded-2xl bg-on-secondary-fixed text-white flex items-center justify-center font-bold flex-shrink-0">
+                    <span class="material-symbols-outlined text-2xl sm:text-3xl">smart_toy</span>
+                  </div>
+                  <div class="flex items-center gap-2 flex-wrap">
+                    <h3 class="font-headline font-bold text-base sm:text-2xl text-on-secondary-fixed">Automatización con IA</h3>
+                    <span class="text-[9px] sm:text-[10px] px-2 py-0.5 rounded-full bg-secondary text-white font-extrabold uppercase">24/7</span>
+                  </div>
+                </div>
+                <span class="material-symbols-outlined pillar-chevron text-secondary text-2xl md:hidden transition-transform duration-300">expand_more</span>
+              </button>
+              
+              <div class="pillar-content hidden md:flex flex-col gap-3.5 sm:gap-5 pt-1">
+                <p class="text-xs sm:text-sm text-on-secondary leading-relaxed">
+                  Agentes de IA y flujos automatizados (Supabase, n8n) que trabajan por ti 24/7: responden clientes, gestionan reservas, cualifican leads y conectan tu web con el resto de tu negocio.
+                </p>
+                <ul class="text-xs sm:text-sm text-on-secondary space-y-2 sm:space-y-2.5 mt-auto pt-3.5 sm:pt-5 border-t border-border-subtle">
+                  <li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-base">check_circle</span> Agentes IA para atención y reservas 24/7</li>
+                  <li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-base">check_circle</span> Flujos integrados con n8n y Supabase</li>
+                  <li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-base">check_circle</span> Cualificación y aviso directo a WhatsApp/CRM</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Bloque 3: Marketing con IA -->
+            <div class="pillar-card bg-white p-5 sm:p-10 lg:p-11 rounded-2xl sm:rounded-3xl border-2 border-secondary/40 shadow-md md:shadow-xl hover:shadow-2xl flex flex-col gap-3.5 sm:gap-5 transition-all">
+              <button class="pillar-toggle w-full flex items-center justify-between text-left focus:outline-none cursor-pointer md:cursor-default" type="button" aria-expanded="false">
+                <div class="flex items-center gap-3 sm:gap-4">
+                  <div class="w-11 h-11 sm:w-14 sm:h-14 rounded-2xl bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-bold flex-shrink-0">
+                    <span class="material-symbols-outlined text-2xl sm:text-3xl">campaign</span>
+                  </div>
+                  <h3 class="font-headline font-bold text-base sm:text-2xl text-on-secondary-fixed">Marketing con IA</h3>
+                </div>
+                <span class="material-symbols-outlined pillar-chevron text-secondary text-2xl md:hidden transition-transform duration-300">expand_more</span>
+              </button>
+              
+              <div class="pillar-content hidden md:flex flex-col gap-3.5 sm:gap-5 pt-1">
+                <p class="text-xs sm:text-sm text-on-secondary leading-relaxed">
+                  Imágenes y vídeos publicitarios generados con IA para anuncios y redes sociales, a una fracción del coste y tiempo de una producción tradicional. Contenido listo para campañas en Meta Ads, Google Ads o RRSS.
+                </p>
+                <ul class="text-xs sm:text-sm text-on-secondary space-y-2 sm:space-y-2.5 mt-auto pt-3.5 sm:pt-5 border-t border-border-subtle">
+                  <li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-base">check_circle</span> Creatividades publicitarias de alto impacto</li>
+                  <li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-base">check_circle</span> Producción a una fracción del coste tradicional</li>
+                  <li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-base">check_circle</span> Contenido listo para Meta Ads, Google Ads y RRSS</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- ==================== EJEMPLOS REALES DE CONVERSACIÓN ==================== -->
+          <div class="mt-8 sm:mt-14 bg-white rounded-3xl p-5 sm:p-10 lg:p-12 border border-border-subtle shadow-xl flex flex-col gap-4 sm:gap-8">
+            
+            <div class="text-center">
+              <span class="text-[11px] sm:text-xs uppercase tracking-[0.2em] font-extrabold text-on-surface-variant block">
+                Ejemplos Reales de Conversación
+              </span>
+            </div>
+
+            <!-- Switcher de Pestañas en Móvil (Visible solo en pantallas < lg) -->
+            <div class="flex lg:hidden items-center justify-center p-1 bg-[#F0F4FF] rounded-2xl gap-1 max-w-xs mx-auto w-full border border-border-subtle shadow-inner">
+              <button id="demo-tab-whatsapp" type="button" class="flex-1 py-2 px-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 bg-white text-on-secondary-fixed shadow-sm">
+                <span class="material-symbols-outlined text-base text-emerald-600">chat</span>
+                <span>WhatsApp</span>
+              </button>
+              <button id="demo-tab-voice" type="button" class="flex-1 py-2 px-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 text-on-surface-variant hover:text-on-secondary-fixed">
+                <span class="material-symbols-outlined text-base text-indigo-600">call</span>
+                <span>Llamada Voz</span>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-8 items-stretch">
+              
+              <!-- Columna 1: Agente WhatsApp -->
+              <div id="demo-panel-whatsapp" class="bg-[#F8F9FA] rounded-2xl sm:rounded-3xl p-4 sm:p-7 border border-border-subtle flex flex-col gap-4 shadow-sm">
+                
+                <!-- Header WhatsApp -->
+                <div class="flex items-center gap-3 pb-3 border-b border-border-subtle">
+                  <div class="w-10 h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center shadow-md flex-shrink-0">
+                    <span class="material-symbols-outlined text-xl">chat</span>
+                  </div>
+                  <div class="flex flex-col">
+                    <span class="font-headline font-bold text-sm sm:text-base text-on-secondary-fixed">Agente WhatsApp</span>
+                    <span class="text-[11px] text-emerald-600 font-semibold flex items-center gap-1">
+                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                      <span>responde en 4s</span>
+                    </span>
+                  </div>
+                </div>
+
+                <!-- Mensajes estilo WhatsApp -->
+                <div class="flex flex-col gap-2.5 pt-1">
+                  
+                  <!-- Mensaje 1: Cliente -->
+                  <div class="flex justify-start">
+                    <div class="bg-white rounded-2xl rounded-tl-sm px-3.5 py-2.5 text-xs sm:text-sm text-on-secondary-fixed shadow-sm border border-black/5 max-w-[88%] leading-relaxed">
+                      Hola, ¿tenéis mesa para 4 personas este viernes a las 21:30? 🍽️
+                    </div>
+                  </div>
+
+                  <!-- Mensaje 2: Agente IA -->
+                  <div class="flex justify-end">
+                    <div class="bg-gradient-to-r from-emerald-600 to-emerald-700 text-white rounded-2xl rounded-tr-sm px-3.5 py-2.5 text-xs sm:text-sm shadow-sm max-w-[90%] leading-relaxed">
+                      ¡Hola Carlos! Te confirmo: tenemos disponibilidad en terraza y salón interior. ¿Prefieres terraza?
+                    </div>
+                  </div>
+
+                  <!-- Mensaje 3: Cliente -->
+                  <div class="flex justify-start">
+                    <div class="bg-white rounded-2xl rounded-tl-sm px-3.5 py-2.5 text-xs sm:text-sm text-on-secondary-fixed shadow-sm border border-black/5 max-w-[88%] leading-relaxed">
+                      Sí, en terraza si es posible, a nombre de Carlos Martín.
+                    </div>
+                  </div>
+
+                  <!-- Mensaje 4: Agente IA -->
+                  <div class="flex justify-end">
+                    <div class="bg-gradient-to-r from-emerald-600 to-emerald-700 text-white rounded-2xl rounded-tr-sm px-3.5 py-2.5 text-xs sm:text-sm shadow-sm max-w-[90%] leading-relaxed">
+                      ¡Reserva confirmada! ✅ <strong>Viernes 21:30h en terraza</strong> (4 personas). Te acabo de agendar y enviar el recordatorio.
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <!-- Columna 2: Agente de Voz · Llamada -->
+              <div id="demo-panel-voice" class="hidden lg:flex bg-[#F8F9FA] rounded-2xl sm:rounded-3xl p-4 sm:p-7 border border-border-subtle flex-col gap-4 shadow-sm">
+                
+                <!-- Header Voz -->
+                <div class="flex items-center gap-3 pb-3 border-b border-border-subtle">
+                  <div class="w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center shadow-md flex-shrink-0">
+                    <span class="material-symbols-outlined text-xl">call</span>
+                  </div>
+                  <div class="flex flex-col">
+                    <span class="font-headline font-bold text-sm sm:text-base text-on-secondary-fixed">Agente de Voz · Llamada</span>
+                    <span class="text-[11px] text-indigo-600 font-semibold flex items-center gap-1">
+                      <span class="w-1.5 h-1.5 rounded-full bg-indigo-600 animate-pulse"></span>
+                      <span>00:43 · llamada activa</span>
+                    </span>
+                  </div>
+                </div>
+
+                <!-- Transcripción de llamada -->
+                <div class="flex flex-col gap-2.5 pt-1">
+                  
+                  <!-- Línea 1: Agente -->
+                  <div class="bg-white rounded-xl p-3 sm:p-4 border-l-4 border-l-indigo-600 border border-border-subtle shadow-sm flex flex-col gap-1">
+                    <span class="text-[10px] font-extrabold uppercase tracking-wider text-indigo-600">Agente</span>
+                    <p class="text-xs sm:text-sm text-on-secondary-fixed leading-relaxed">
+                      Restaurante La Toscana, buenos días. ¿En qué puedo ayudarte?
+                    </p>
+                  </div>
+
+                  <!-- Línea 2: Cliente -->
+                  <div class="bg-white rounded-xl p-3 sm:p-4 border-l-4 border-l-on-surface-variant/40 border border-border-subtle shadow-sm flex flex-col gap-1">
+                    <span class="text-[10px] font-extrabold uppercase tracking-wider text-on-surface-variant">Cliente</span>
+                    <p class="text-xs sm:text-sm text-on-secondary-fixed leading-relaxed">
+                      Hola, quería saber si tenéis opciones sin gluten en la carta y si tenéis mesa para hoy.
+                    </p>
+                  </div>
+
+                  <!-- Línea 3: Agente -->
+                  <div class="bg-white rounded-xl p-3 sm:p-4 border-l-4 border-l-indigo-600 border border-border-subtle shadow-sm flex flex-col gap-1">
+                    <span class="text-[10px] font-extrabold uppercase tracking-wider text-indigo-600">Agente</span>
+                    <p class="text-xs sm:text-sm text-on-secondary-fixed leading-relaxed">
+                      Sí, adaptamos el 90% de nuestros platos sin gluten y tenemos mesa libre a las 14:30 o 15:00. ¿Te agendo la reserva ahora mismo?
+                    </p>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==================== TIPOS DE WEBS QUE CREAMOS ==================== -->
+      <section id="tipos-web" class="w-full px-4 sm:px-8 lg:px-12 py-10 sm:py-20 scroll-mt-16">
+        <div class="max-w-container-max mx-auto">
+          
+          <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-14 lds-cream-card p-6 sm:p-10 rounded-3xl">
+            <span class="text-xs uppercase tracking-widest text-secondary font-bold mb-2 block">Soluciones Adaptadas</span>
+            <h2 class="font-headline text-2xl sm:text-3xl lg:text-4xl font-extrabold text-on-secondary-fixed">
+              Diseñamos la Web Exacta que Tu Negocio Necesita
+            </h2>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+            
+            <div class="p-5 sm:p-9 rounded-2xl sm:rounded-3xl bg-white border border-border-subtle shadow-lg hover:shadow-xl transition-all flex flex-col gap-2.5 sm:gap-3">
+              <span class="text-3xl">🏢</span>
+              <h4 class="font-headline font-bold text-base sm:text-lg text-on-secondary-fixed">Negocios & Servicios</h4>
+              <p class="text-xs sm:text-sm text-on-secondary leading-relaxed">Inmobiliarias, clínicas, abogados, reformas y consultores que necesitan captar clientes locales.</p>
+            </div>
+
+            <div class="p-5 sm:p-9 rounded-2xl sm:rounded-3xl bg-white border border-border-subtle shadow-lg hover:shadow-xl transition-all flex flex-col gap-2.5 sm:gap-3">
+              <span class="text-3xl">🚀</span>
+              <h4 class="font-headline font-bold text-base sm:text-lg text-on-secondary-fixed">Startups & Marcas Personales</h4>
+              <p class="text-xs sm:text-sm text-on-secondary leading-relaxed">Webs modernas y dinámicas para posicionarte como referente de tu sector y validar productos.</p>
+            </div>
+
+            <div class="p-5 sm:p-9 rounded-2xl sm:rounded-3xl bg-white border border-border-subtle shadow-lg hover:shadow-xl transition-all flex flex-col gap-2.5 sm:gap-3">
+              <span class="text-3xl">📱</span>
+              <h4 class="font-headline font-bold text-base sm:text-lg text-on-secondary-fixed">Landing Pages para Anuncios</h4>
+              <p class="text-xs sm:text-sm text-on-secondary leading-relaxed">Páginas de alta conversión diseñadas específicamente para maximizar ventas en campañas de pago.</p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==================== POR QUÉ NUESTRO DESARROLLO WEB ES SUPERIOR ==================== -->
+      <section id="diferenciales" class="w-full px-4 sm:px-8 lg:px-12 py-14 sm:py-20 scroll-mt-16">
+        <div class="max-w-4xl mx-auto">
+          
+          <div class="text-center mb-10 lds-cream-card p-8 sm:p-10 rounded-3xl">
+            <span class="text-xs uppercase tracking-widest text-secondary font-bold mb-2 block">Diferenciales de Calidad</span>
+            <h2 class="font-headline text-2xl sm:text-3xl font-extrabold text-on-secondary-fixed">
+              ¿Por Qué Nuestras Webs Superan a las Webs Tradicionales?
+            </h2>
+          </div>
+
+          <div class="bg-white rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden border border-border-subtle overflow-x-auto">
+            <div class="min-w-[500px] sm:min-w-full">
+              <div class="grid grid-cols-3 bg-on-secondary-fixed text-white p-4 sm:p-7 text-xs sm:text-sm font-bold uppercase tracking-wider">
+                <div>Aspecto Clave</div>
+                <div class="text-center text-white/70">Web Tradicional</div>
+                <div class="text-center text-secondary-fixed font-extrabold">Desarrollo LDS</div>
+              </div>
+
+              <div class="grid grid-cols-3 p-4 sm:p-7 border-b border-border-subtle items-center text-xs sm:text-sm bg-white">
+                <div class="font-bold text-on-secondary-fixed">Velocidad en Móviles</div>
+                <div class="text-center text-on-surface-variant">Lenta (4 a 8 seg)</div>
+                <div class="text-center font-bold text-secondary">Ultrarrápida (&lt;1.5s)</div>
+              </div>
+
+              <div class="grid grid-cols-3 p-4 sm:p-7 border-b border-border-subtle items-center text-xs sm:text-sm bg-white">
+                <div class="font-bold text-on-secondary-fixed">Diseño y Estilo</div>
+                <div class="text-center text-on-surface-variant">Plantillas repetidas</div>
+                <div class="text-center font-bold text-secondary">100% Exclusivo</div>
+              </div>
+
+              <div class="grid grid-cols-3 p-4 sm:p-7 border-b border-border-subtle items-center text-xs sm:text-sm bg-white">
+                <div class="font-bold text-on-secondary-fixed">Seguridad & Datos</div>
+                <div class="text-center text-on-surface-variant">Vulnerable (plugins)</div>
+                <div class="text-center font-bold text-secondary">Bases seguras (Supabase)</div>
+              </div>
+
+              <div class="grid grid-cols-3 p-4 sm:p-7 items-center text-xs sm:text-sm bg-white">
+                <div class="font-bold text-on-secondary-fixed">Captación de Leads</div>
+                <div class="text-center text-on-surface-variant">Emails en spam</div>
+                <div class="text-center font-bold text-secondary">Aviso instantáneo WhatsApp/n8n</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==================== SHOWROOM: ASISTENTE WEB INTELIGENTE ==================== -->
+      <section id="showroom" class="w-full px-4 sm:px-8 lg:px-12 py-14 sm:py-20 scroll-mt-16">
+        <div class="max-w-4xl mx-auto flex flex-col items-center text-center mb-8 lds-cream-card p-6 sm:p-8 rounded-3xl">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-fixed/40 text-on-secondary-fixed text-xs font-bold mb-3 border border-secondary-fixed">
+            <span class="live-dot-green"></span> Complemento Inteligente Opcional
+          </div>
+          <h2 class="font-headline text-2xl sm:text-3xl font-extrabold text-on-secondary-fixed mb-2">
+            Equipa tu Nueva Web con un Asistente IA 24/7
+          </h2>
+          <p class="text-sm sm:text-base text-on-secondary max-w-xl">
+            Además de diseñar tu web, podemos integrarle un asistente inteligente que responda dudas y cotice tus servicios a cualquier hora:
+          </p>
+        </div>
+
+        <div class="max-w-3xl mx-auto lds-card rounded-2xl overflow-hidden shadow-xl border border-border-subtle bg-white">
+          <div class="h-11 sm:h-12 bg-on-secondary-fixed px-4 sm:px-6 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <div class="flex gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-white/30"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-white/30"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-white/30"></span>
+              </div>
+              <span class="text-white/80 font-mono text-[11px] sm:text-xs">LDS Web Copilot // Asistente Interactivo</span>
+            </div>
+            <span class="text-xs text-emerald-300 font-mono font-bold flex items-center gap-1">
+              <span class="live-dot-green"></span> ONLINE
+            </span>
+          </div>
+
+          <div id="chat-window" class="p-4 sm:p-6 h-72 sm:h-80 overflow-y-auto flex flex-col gap-3 text-xs sm:text-sm bg-[#f8f9fa]">
+            <div class="flex items-start gap-2.5 max-w-[90%] sm:max-w-[85%]">
+              <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-on-secondary-fixed text-white flex-shrink-0 flex items-center justify-center font-bold text-[10px] sm:text-xs">
+                LDS
+              </div>
+              <div class="chat-bubble-agent-light p-3.5 sm:p-4 rounded-2xl rounded-tl-sm text-on-secondary-fixed flex flex-col gap-1.5 shadow-sm">
+                <div class="flex items-center gap-2">
+                  <span class="font-bold text-xs text-on-secondary-fixed">LDS Web Assistant</span>
+                  <span class="text-[10px] text-on-surface-variant font-medium">Ahora</span>
+                </div>
+                <p>¡Hola! Soy el asistente de demostración. Puedo resolver preguntas sobre los tipos de páginas web que creamos o estimar el presupuesto de tu proyecto.</p>
+                <p class="text-on-surface-variant text-[11px] sm:text-xs">Toca una opción para probar:</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="px-3 sm:px-6 py-2.5 sm:py-3 bg-white border-t border-border-subtle flex flex-wrap gap-1.5 sm:gap-2 items-center">
+            <span class="text-[10px] sm:text-[11px] uppercase tracking-wider text-on-surface-variant font-bold">Preguntas rápidas:</span>
+            <button class="prompt-chip text-[11px] sm:text-xs px-3 py-1.5 rounded-full bg-secondary-fixed/40 hover:bg-secondary-fixed text-on-secondary-fixed font-semibold transition-all" data-prompt="¿Cuánto cuesta crear una web profesional?">
+              💰 Precios de Webs
+            </button>
+            <button class="prompt-chip text-[11px] sm:text-xs px-3 py-1.5 rounded-full bg-secondary-fixed/40 hover:bg-secondary-fixed text-on-secondary-fixed font-semibold transition-all" data-prompt="¿Qué diferencia hay entre una Landing Page y una Web Corporativa?">
+              📄 Landing vs Web
+            </button>
+            <button class="prompt-chip text-[11px] sm:text-xs px-3 py-1.5 rounded-full bg-secondary-fixed/40 hover:bg-secondary-fixed text-on-secondary-fixed font-semibold transition-all" data-prompt="¿Cuánto tardáis en entregar mi web?">
+              ⏱️ Tiempos de Entrega
+            </button>
+          </div>
+
+          <form id="chat-form" class="p-3 sm:p-4 bg-white border-t border-border-subtle flex items-center gap-2 sm:gap-3">
+            <input 
+              id="chat-input"
+              type="text" 
+              placeholder="Pregunta sobre tu web (ej: 'Necesito una web para mi clínica')..."
+              class="flex-1 bg-[#f8f9fa] border border-border-subtle rounded-xl px-3.5 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-on-secondary-fixed placeholder:text-on-surface-variant focus:outline-none focus:border-secondary focus:bg-white"
+              autocomplete="off"
+            />
+            <button type="submit" class="btn-lds-accent px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl flex items-center justify-center font-bold text-xs sm:text-sm">
+              <span class="material-symbols-outlined text-base sm:text-lg">send</span>
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- ==================== METODOLOGÍA DE TRABAJO ==================== -->
+      <section id="metodologia" class="w-full px-4 sm:px-8 lg:px-12 py-14 sm:py-20 scroll-mt-16">
+        <div class="max-w-container-max mx-auto lds-cream-card p-8 sm:p-12 lg:p-14 rounded-3xl flex flex-col gap-10 sm:gap-12">
+          
+          <div class="text-center max-w-2xl mx-auto">
+            <span class="text-xs uppercase tracking-widest text-secondary font-bold mb-2 block">Proceso Simple y Ágil</span>
+            <h2 class="font-headline text-2xl sm:text-3xl lg:text-4xl font-extrabold text-on-secondary-fixed">
+              De la Idea al Lanzamiento de tu Web en 4 Pasos
+            </h2>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <div class="p-7 sm:p-8 rounded-3xl bg-white border border-border-subtle shadow-xl hover:shadow-2xl flex flex-col gap-3.5 hover:-translate-y-1.5 transition-all">
+              <div class="w-11 h-11 rounded-full bg-on-secondary-fixed text-white font-bold flex items-center justify-center text-sm shadow-md">1</div>
+              <h3 class="font-headline font-bold text-base sm:text-lg text-on-secondary-fixed">1. Definición & Estructura</h3>
+              <p class="text-xs sm:text-sm text-on-secondary leading-relaxed">Analizamos tu negocio, definimos los objetivos de tu web y creamos la estructura de contenidos.</p>
+            </div>
+
+            <div class="p-7 sm:p-8 rounded-3xl bg-white border border-border-subtle shadow-xl hover:shadow-2xl flex flex-col gap-3.5 hover:-translate-y-1.5 transition-all">
+              <div class="w-11 h-11 rounded-full bg-on-secondary-fixed text-white font-bold flex items-center justify-center text-sm shadow-md">2</div>
+              <h3 class="font-headline font-bold text-base sm:text-lg text-on-secondary-fixed">2. Diseño Visual a Medida</h3>
+              <p class="text-xs sm:text-sm text-on-secondary leading-relaxed">Diseñamos una interfaz limpia, elegante y adaptada a tu identidad corporativa.</p>
+            </div>
+
+            <div class="p-7 sm:p-8 rounded-3xl bg-white border border-border-subtle shadow-xl hover:shadow-2xl flex flex-col gap-3.5 hover:-translate-y-1.5 transition-all">
+              <div class="w-11 h-11 rounded-full bg-on-secondary-fixed text-white font-bold flex items-center justify-center text-sm shadow-md">3</div>
+              <h3 class="font-headline font-bold text-base sm:text-lg text-on-secondary-fixed">3. Desarrollo & Optimización</h3>
+              <p class="text-xs sm:text-sm text-on-secondary leading-relaxed">Programamos la web con código limpio, optimizamos la velocidad y conectamos formularios con Supabase/n8n.</p>
+            </div>
+
+            <div class="p-7 sm:p-8 rounded-3xl bg-white border border-border-subtle shadow-xl hover:shadow-2xl flex flex-col gap-3.5 hover:-translate-y-1.5 transition-all">
+              <div class="w-11 h-11 rounded-full bg-on-secondary-fixed text-white font-bold flex items-center justify-center text-sm shadow-md">4</div>
+              <h3 class="font-headline font-bold text-base sm:text-lg text-on-secondary-fixed">4. Publicación Oficial</h3>
+              <p class="text-xs sm:text-sm text-on-secondary leading-relaxed">Puesta en marcha con dominio y SSL. Tu nueva web lista para empezar a recibir visitas y clientes.</p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==================== FORMULARIO DE PRESUPUESTO / AUDITORÍA ==================== -->
+      <section id="auditoria" class="w-full max-w-container-max mx-auto px-4 sm:px-8 py-10 sm:py-20 scroll-mt-16 sm:scroll-mt-20">
+        <div class="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-10 lg:p-14 border border-border-subtle shadow-xl sm:shadow-2xl max-w-3xl mx-auto">
+          
+          <div class="flex flex-col items-center text-center mb-6 sm:mb-8">
+            <div id="form-badge-wrapper" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-fixed/40 text-on-secondary-fixed text-xs font-bold mb-3 border border-secondary-fixed">
+              <span class="material-symbols-outlined text-sm">bolt</span> 
+              <span id="form-badge-text">Presupuesto Rápido y Sin Compromiso</span>
+            </div>
+            <h2 id="form-title" class="font-headline text-xl sm:text-3xl font-extrabold text-on-secondary-fixed mb-2 transition-all duration-300">
+              Pide Presupuesto para tu Nueva Página Web
+            </h2>
+            <p id="form-subtitle" class="text-xs sm:text-sm text-on-secondary max-w-lg transition-all duration-300">
+              Cuéntanos qué necesitas y te responderemos en menos de 24 horas con una propuesta clara y cerrada.
+            </p>
+          </div>
+
+          <!-- Banner Destacado: Prueba tú mismo el Agente por Voz -->
+          <div class="mb-6 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-[#001A42] via-[#0d2a5d] to-[#001A42] text-white shadow-xl border border-secondary/30 flex items-start sm:items-center gap-3.5 sm:gap-4 relative overflow-hidden">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center flex-shrink-0 text-white border border-white/15 shadow-inner">
+              <span class="material-symbols-outlined text-2xl text-emerald-400 animate-pulse">mic</span>
+            </div>
+            <div class="flex flex-col gap-0.5 text-left pr-2">
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="font-headline font-bold text-xs sm:text-sm text-white">¿Quieres ver la IA en acción AHORA?</span>
+                <span class="text-[9px] sm:text-[10px] px-2 py-0.5 rounded-full bg-emerald-500 text-white font-extrabold uppercase tracking-wide">Demo en Vivo</span>
+              </div>
+              <p class="text-xs sm:text-sm text-white/85 leading-snug">
+                Prueba tú mismo el Agente por Voz: al enviar el formulario podrás elegir si nuestra IA te llama para que la pruebes en directo. Tú decides.
+              </p>
+            </div>
+          </div>
+
+          <form id="lead-form" class="flex flex-col gap-4 sm:gap-5">
+            
+            <!-- Honeypot Antispam (Invisible para humanos, trampa para bots) -->
+            <div class="hidden" aria-hidden="true" style="display:none !important; position:absolute; left:-9999px;">
+              <label for="website_hp_check">No rellenar</label>
+              <input type="text" id="website_hp_check" name="website_hp_check" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+              <div class="flex flex-col gap-1.5 w-full">
+                <label for="fullName" class="text-xs font-bold text-on-secondary-fixed uppercase tracking-wider">Tu Nombre *</label>
+                <input 
+                  type="text" 
+                  id="fullName" 
+                  name="fullName" 
+                  required 
+                  autocomplete="name"
+                  autocapitalize="words"
+                  placeholder="Ej: David Ruiz" 
+                  class="w-full bg-[#f8f9fa] border border-border-subtle rounded-xl px-4 py-3.5 text-[16px] sm:text-sm text-on-secondary-fixed focus:outline-none focus:border-secondary focus:bg-white min-h-[48px] transition-colors"
+                />
+              </div>
+
+              <div class="flex flex-col gap-1.5 w-full">
+                <label for="email" class="text-xs font-bold text-on-secondary-fixed uppercase tracking-wider">Email de Contacto *</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  required 
+                  inputmode="email"
+                  autocomplete="email"
+                  autocapitalize="off"
+                  spellcheck="false"
+                  placeholder="david@empresa.com" 
+                  class="w-full bg-[#f8f9fa] border border-border-subtle rounded-xl px-4 py-3.5 text-[16px] sm:text-sm text-on-secondary-fixed focus:outline-none focus:border-secondary focus:bg-white min-h-[48px] transition-colors"
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+              <div class="flex flex-col gap-1.5 w-full">
+                <label for="phone" class="text-xs font-bold text-on-secondary-fixed uppercase tracking-wider">Teléfono / WhatsApp *</label>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  name="phone" 
+                  required
+                  inputmode="tel"
+                  autocomplete="tel"
+                  placeholder="+34 600 000 000" 
+                  class="w-full bg-[#f8f9fa] border border-border-subtle rounded-xl px-4 py-3.5 text-[16px] sm:text-sm text-on-secondary-fixed focus:outline-none focus:border-secondary focus:bg-white min-h-[48px] transition-colors"
+                />
+              </div>
+
+              <div class="flex flex-col gap-1.5 w-full">
+                <label for="serviceInterest" class="text-xs font-bold text-on-secondary-fixed uppercase tracking-wider">¿Qué servicio necesitas? *</label>
+                <select 
+                  id="serviceInterest" 
+                  name="serviceInterest" 
+                  required 
+                  class="w-full bg-[#f8f9fa] border border-border-subtle rounded-xl px-4 py-3.5 text-[16px] sm:text-sm text-on-secondary-fixed focus:outline-none focus:border-secondary focus:bg-white min-h-[48px] transition-colors cursor-pointer"
+                >
+                  <option value="web_corporativa">Quiero mi Web (Landing Page / Corporativa)</option>
+                  <option value="agente_whatsapp">Quiero un Agente de WhatsApp</option>
+                  <option value="agente_voz">Quiero un Agente por Voz (Llamadas)</option>
+                  <option value="web_con_ia">Pack Completo: Web + Agente IA</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-1.5 w-full">
+              <label for="projectDescription" id="projectDescription-label" class="text-xs font-bold text-on-secondary-fixed uppercase tracking-wider">Cuéntanos sobre tu proyecto o negocio *</label>
+              <textarea 
+                id="projectDescription" 
+                name="projectDescription" 
+                rows="3" 
+                required
+                placeholder="¿A qué se dedica tu empresa? ¿Tienes alguna web de referencia que te guste?..." 
+                class="w-full bg-[#f8f9fa] border border-border-subtle rounded-xl px-4 py-3.5 text-[16px] sm:text-sm text-on-secondary-fixed focus:outline-none focus:border-secondary focus:bg-white min-h-[100px] sm:min-h-[110px] resize-y transition-colors leading-relaxed"
+              ></textarea>
+            </div>
+
+            <!-- Casilla de Selección: Prueba tú mismo el Agente por Voz -->
+            <label class="flex items-start gap-3 p-3.5 sm:p-4 rounded-xl bg-[#F0F4FF] border border-secondary/25 hover:border-secondary/60 cursor-pointer transition-all">
+              <input 
+                type="checkbox" 
+                id="requestVoiceCall" 
+                name="requestVoiceCall" 
+                class="mt-1 w-4 h-4 text-secondary rounded focus:ring-secondary cursor-pointer"
+                checked
+              />
+              <div class="flex flex-col">
+                <span class="text-xs sm:text-sm font-bold text-on-secondary-fixed flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-secondary text-base">phone_in_talk</span>
+                  <span>Prueba tú mismo el Agente por Voz</span>
+                </span>
+                <span class="text-[11px] sm:text-xs text-on-secondary leading-relaxed mt-0.5">
+                  Marcando esta casilla, nuestro agente inteligente te llamará gratis e instantáneamente al número indicado para que compruebes su fluidez en vivo.
+                </span>
+              </div>
+            </label>
+
+            <button 
+              type="submit" 
+              id="submit-lead-btn"
+              class="btn-lds-primary w-full py-4 px-6 rounded-xl font-bold uppercase tracking-wider text-xs sm:text-sm shadow-lg hover:shadow-xl mt-2 min-h-[48px] flex items-center justify-center gap-2"
+            >
+              <span>Solicitar Presupuesto Gratuito</span>
+              <span class="material-symbols-outlined text-base">send</span>
+            </button>
+
+          </form>
+
+        </div>
+      </section>
+
+      <!-- ==================== MOSAICO DE LOGOS DE CLIENTES ==================== -->
+      <section id="clientes" class="w-full px-4 sm:px-8 lg:px-12 py-10 sm:py-20 scroll-mt-16">
+        <div class="max-w-container-max mx-auto">
+          
+          <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-14 lds-cream-card p-6 sm:p-10 rounded-3xl">
+            <span class="text-xs uppercase tracking-widest text-secondary font-bold mb-2 block">Marcas & Proyectos</span>
+            <h2 class="font-headline text-2xl sm:text-3xl lg:text-4xl font-extrabold text-on-secondary-fixed">
+              Clientes que Confían en Nosotros
+            </h2>
+            <p class="text-xs sm:text-base text-on-secondary mt-2">
+              Empresas y negocios que impulsan su presencia digital con nuestras soluciones a medida.
+            </p>
+          </div>
+
+          <!-- Mosaico de Logos Responsive Compacto (Fondo Blanco) -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5 sm:gap-6">
+            
+            <!-- Logo 1: Garden by Valentina -->
+            <a href="https://gardenbyvalentina.netlify.app/" target="_blank" rel="noopener noreferrer" class="bg-white border border-border-subtle shadow-lg hover:shadow-2xl p-3.5 sm:p-8 rounded-2xl sm:rounded-3xl hover:-translate-y-1.5 flex items-center justify-center h-28 sm:h-48 group transition-all" title="Garden by Valentina">
+              <img src="logo_garden_clean.png" alt="Garden by Valentina" class="max-h-12 sm:max-h-20 max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
+            </a>
+
+            <!-- Logo 2: The Parce Barber -->
+            <a href="https://theparcebarber.netlify.app/" target="_blank" rel="noopener noreferrer" class="bg-white border border-border-subtle shadow-lg hover:shadow-2xl p-3.5 sm:p-8 rounded-2xl sm:rounded-3xl hover:-translate-y-1.5 flex items-center justify-center h-28 sm:h-48 group transition-all" title="The Parce Barber">
+              <img src="logo_parce.jpg" alt="The Parce Barber" class="max-h-16 sm:max-h-28 max-w-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-300">
+            </a>
+
+            <!-- Logo 3: Instalaciones Eléctricas Pardo Bosque -->
+            <a href="https://pardobosque.netlify.app/" target="_blank" rel="noopener noreferrer" class="bg-white border border-border-subtle shadow-lg hover:shadow-2xl p-3.5 sm:p-8 rounded-2xl sm:rounded-3xl hover:-translate-y-1.5 flex items-center justify-center h-28 sm:h-48 group transition-all" title="Instalaciones Eléctricas Pardo Bosque">
+              <img src="logo_pardobosque.jpg" alt="Instalaciones Eléctricas Pardo Bosque" class="max-h-14 sm:max-h-24 max-w-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-300">
+            </a>
+
+            <!-- Logo 4: Pop's -->
+            <a href="https://barpops.netlify.app/" target="_blank" rel="noopener noreferrer" class="bg-white border border-border-subtle shadow-lg hover:shadow-2xl p-3.5 sm:p-8 rounded-2xl sm:rounded-3xl hover:-translate-y-1.5 flex items-center justify-center h-28 sm:h-48 group transition-all" title="Pop's Cerveza, Tapas y Hamburguesas">
+              <img src="logo_pops_clean.png" alt="Pop's Cerveza, Tapas y Hamburguesas" class="max-h-16 sm:max-h-28 max-w-full object-contain drop-shadow-md group-hover:scale-105 transition-transform duration-300">
+            </a>
+
+            <!-- Logo 5: Vístete De Nuevo -->
+            <div class="bg-white border border-border-subtle shadow-lg hover:shadow-2xl p-3.5 sm:p-8 rounded-2xl sm:rounded-3xl hover:-translate-y-1.5 flex items-center justify-center h-28 sm:h-48 group col-span-2 sm:col-span-1 transition-all" title="Vístete De Nuevo">
+              <img src="logo_vistetedenuevo.png" alt="Vístete De Nuevo" class="max-h-14 sm:max-h-24 max-w-full object-contain rounded-xl shadow-sm group-hover:scale-105 transition-transform duration-300">
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="w-full bg-surface-container-lowest text-white py-12 px-4 sm:px-8 border-t border-white/5">
+    <div class="max-w-container-max mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <img src="logo.png" alt="LDS Automate & Web Dev" class="h-10 w-auto bg-white p-1 rounded-xl object-contain shadow">
+          <span class="font-headline font-extrabold text-xs sm:text-sm tracking-widest text-white uppercase">AUTOMATE &amp; WEB DEV</span>
+        </div>
+        <p class="text-white/70 text-xs leading-relaxed">
+          Diseñamos tu escaparate digital a medida: webs ultra-rápidas, automatizaciones inteligentes (Supabase, n8n) y creatividades publicitarias de alto rendimiento.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-xs uppercase tracking-widest font-bold text-white mb-3">Nuestros Servicios</h4>
+        <div class="flex flex-col gap-2 text-xs text-white/70">
+          <a href="#servicios" class="hover:text-secondary-fixed transition-colors">Presencia Digital & Webs</a>
+          <a href="#servicios" class="hover:text-secondary-fixed transition-colors">Automatización con IA (n8n & Supabase)</a>
+          <a href="#servicios" class="hover:text-secondary-fixed transition-colors">Marketing con IA & Creatividades</a>
+          <a href="#showroom" class="hover:text-secondary-fixed transition-colors">Demo Asistente IA 24/7</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-xs uppercase tracking-widest font-bold text-white mb-3">Tecnologías</h4>
+        <div class="flex flex-col gap-2 text-xs text-white/70">
+          <span>Next.js & HTML5 Limpio</span>
+          <span>Supabase PostgreSQL</span>
+          <span>n8n Automations</span>
+          <a href="#clientes" class="hover:text-secondary-fixed transition-colors">Clientes & Marcas</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-xs uppercase tracking-widest font-bold text-white mb-3">Contacto</h4>
+        <div class="flex flex-col gap-2 text-xs text-white/70">
+          <a href="mailto:contacto@lds-ai.labs" class="hover:text-secondary-fixed transition-colors">contacto@lds-ai.labs</a>
+          <a href="#auditoria" class="bg-secondary text-white py-2.5 px-4 rounded-xl text-center font-bold uppercase tracking-wider mt-2 hover:bg-secondary/90 shadow-sm transition-colors">
+            Pedir Presupuesto
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="max-w-container-max mx-auto mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-white/50">
+      <span>© 2026 LDS Web Studio. Todos los derechos reservados.</span>
+      <div class="flex gap-4">
+        <a href="#" class="hover:text-white">Privacidad</a>
+        <a href="#" class="hover:text-white">Términos</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== WIDGET FLOTANTE INFERIOR DERECHO (PRESUPUESTO SIN COMPROMISO) ==================== -->
+  <aside id="floating-quote-widget" class="fixed bottom-3 sm:bottom-6 right-3 sm:right-6 z-40 transition-all duration-300 transform translate-y-0" aria-label="Solicitar Presupuesto">
+    
+    <!-- Mini Botón Flotante (cuando el usuario lo minimiza) -->
+    <button id="floating-quote-mini" class="hidden items-center gap-2 bg-on-secondary-fixed text-white px-3 sm:px-4 py-2 sm:py-3 rounded-full shadow-xl hover:bg-on-secondary hover:scale-105 transition-all border border-white/20">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider">Presupuesto</span>
+      <span class="material-symbols-outlined text-xs sm:text-sm">bolt</span>
+    </button>
+
+    <!-- Tarjeta Flotante Principal Compacta en Móvil -->
+    <div id="floating-quote-card" class="bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-3xl border border-border-subtle shadow-xl sm:shadow-2xl p-3 sm:p-5 max-w-[230px] sm:max-w-[330px] flex flex-col gap-1.5 sm:gap-2.5 relative hover:shadow-[0_20px_40px_rgba(0,26,66,0.15)] transition-all">
+      
+      <!-- Botón cerrar / minimizar -->
+      <button id="floating-quote-close" class="absolute top-2 right-2 text-on-surface-variant hover:text-on-secondary-fixed p-1 rounded-full hover:bg-[#f0f0f0] transition-colors" aria-label="Minimizar">
+        <span class="material-symbols-outlined text-[16px] sm:text-sm">close</span>
+      </button>
+
+      <div class="flex items-center gap-1.5 pr-5">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span class="text-[9px] sm:text-[10px] uppercase tracking-wider font-extrabold text-secondary">Presupuesto 24h</span>
+      </div>
+
+      <div>
+        <h4 class="font-headline font-bold text-[11px] sm:text-sm text-on-secondary-fixed leading-tight">
+          ¿Hablamos de tu web?
+        </h4>
+        <p class="hidden sm:block text-[11px] text-on-secondary mt-1 leading-relaxed">
+          Cuéntanos tu idea y te enviamos una propuesta cerrada en menos de 24h.
+        </p>
+      </div>
+
+      <a href="#auditoria" id="floating-quote-cta-btn" class="btn-lds-primary w-full py-2 sm:py-2.5 px-2.5 rounded-xl text-center font-bold text-[10px] sm:text-xs uppercase tracking-wider shadow-md hover:shadow-lg flex items-center justify-center gap-1 mt-0.5 sm:mt-1 min-h-[34px] sm:min-h-[44px]">
+        <span>Pedir Presupuesto</span>
+        <span class="material-symbols-outlined text-xs sm:text-sm">arrow_forward</span>
+      </a>
+
+    </div>
+  </aside>
+
+  <!-- Toast Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Logic -->
+  <script src="app.js"></script>
+</body>
+</html>

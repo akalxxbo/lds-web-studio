@@ -1,0 +1,244 @@
+/* ==============================================================================
+   LDS AI & WEB LABS - ESTILOS LIMPIOS LIGHT & OPTIMIZACIÓN MOBILE-FIRST
+   ============================================================================== */
+
+:root {
+  --bg-main: #FFFFFF;
+  --bg-secondary: #F8F9FA;
+  --color-navy: #001A42;
+  --color-blue-accent: #2563EB;
+  --color-blue-soft: #D8E2FF;
+  --color-emerald: #10B981;
+  --text-dark: #001A42;
+  --text-muted: #5A6A85;
+  --border-light: rgba(0, 26, 66, 0.08);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  position: relative;
+  background-color: #f7f9fc;
+  color: var(--text-dark);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Capa Unificada de Fondo Monograma LDS con Aceleración por Hardware (GPU) */
+.monogram-parallax-layer {
+  position: fixed;
+  top: -40px;
+  left: -40px;
+  width: calc(100vw + 80px);
+  height: calc(100vh + 80px);
+  background-image: url('pattern.png');
+  background-repeat: repeat;
+  background-size: 160px 160px;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: -1;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Acordeón de Pilares y Pestañas en Móvil */
+@media (max-width: 767px) {
+  .pillar-toggle {
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .pillar-toggle:active {
+    opacity: 0.85;
+  }
+  .pillar-card {
+    transition: box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+  .pillar-card.active-card {
+    border-color: rgba(37, 99, 235, 0.35);
+  }
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Tarjetas y Contenedores con Fondo Sólido Opaco */
+.lds-card, .bg-white, .faq-item, .chat-window-box {
+  background-color: #FFFFFF !important;
+}
+
+.lds-card {
+  border: 1px solid var(--border-light);
+  box-shadow: 0 12px 30px -5px rgba(0, 26, 66, 0.09), 0 4px 12px -2px rgba(0, 26, 66, 0.04);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lds-card:hover {
+  box-shadow: 0 22px 40px -8px rgba(0, 26, 66, 0.15), 0 8px 16px -4px rgba(0, 26, 66, 0.06);
+  transform: translateY(-3px);
+}
+
+/* Tarjetas en color Crema de Marca (#F7F3E7) con Relieve y Sombra Profunda */
+.lds-cream-card {
+  background-color: #F7F3E7 !important;
+  border: 1.5px solid rgba(0, 26, 66, 0.12) !important;
+  box-shadow: 
+    0 16px 36px -4px rgba(0, 26, 66, 0.14), 
+    0 6px 16px -2px rgba(0, 26, 66, 0.08), 
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.9) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lds-cream-card:hover {
+  box-shadow: 
+    0 24px 48px -8px rgba(0, 26, 66, 0.20), 
+    0 10px 22px -3px rgba(0, 26, 66, 0.11), 
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Barra de navegación */
+.lds-nav {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0, 26, 66, 0.06);
+}
+
+/* Botones con tamaño táctil óptimo para móvil (mínimo 44px de altura) */
+.btn-lds-primary {
+  background: #001A42;
+  color: #FFFFFF;
+  font-weight: 700;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.btn-lds-primary:hover, .btn-lds-primary:active {
+  background: #122F5F;
+  transform: scale(0.99);
+}
+
+.btn-lds-secondary {
+  background: #FFFFFF;
+  border: 1.5px solid #001A42;
+  color: #001A42;
+  font-weight: 600;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.btn-lds-secondary:hover, .btn-lds-secondary:active {
+  background: #D8E2FF;
+}
+
+.btn-lds-accent {
+  background: #2563EB;
+  color: #FFFFFF;
+  font-weight: 700;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.btn-lds-accent:hover {
+  background: #1D4ED8;
+}
+
+/* Indicador de estado en vivo */
+.live-dot-green {
+  width: 8px;
+  height: 8px;
+  background-color: #10B981;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 8px #10B981;
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.7; }
+}
+
+/* Estilos de chat para móvil y desktop */
+.chat-bubble-agent-light {
+  background: #F8F9FA;
+  border: 1px solid rgba(0, 26, 66, 0.08);
+  border-left: 3px solid #001A42;
+  color: #001A42;
+}
+
+.chat-bubble-user-light {
+  background: #001A42;
+  color: #FFFFFF;
+}
+
+.tool-badge-light {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  background: #D8E2FF;
+  color: #001A42;
+  font-weight: 600;
+}
+
+/* Slider de la calculadora de ROI */
+input[type=range] {
+  accent-color: #001A42;
+}
+
+/* Toast flotante */
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 16px;
+  left: 16px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: none;
+}
+
+@media (min-width: 640px) {
+  .toast-container {
+    left: auto;
+    right: 24px;
+    max-width: 400px;
+  }
+}
+
+.toast-light {
+  pointer-events: auto;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 26, 66, 0.12);
+  box-shadow: 0 15px 35px rgba(0, 26, 66, 0.15);
+  border-radius: 12px;
+  padding: 14px 18px;
+  color: #001A42;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transform: translateY(120%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.toast-light.show {
+  transform: translateY(0);
+}
