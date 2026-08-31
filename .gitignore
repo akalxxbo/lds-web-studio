@@ -2,6 +2,8 @@
 node_modules/
 .system_generated/
 *.log
+.env
+.env.local
 
 # Scripts de prueba
 test_payload.json

@@ -117,9 +117,37 @@
     <div class="flex flex-col w-full">
 
       <!-- ==================== HERO SECTION (WEB & AUTOMATIZACIONES) ==================== -->
-      <section class="w-full px-4 sm:px-8 lg:px-12 py-10 sm:py-16 relative z-10 max-w-container-max mx-auto">
+      <section class="w-full px-4 sm:px-8 lg:px-12 pt-4 pb-8 sm:pt-6 sm:pb-14 relative z-10 max-w-container-max mx-auto flex flex-col items-center gap-3.5 sm:gap-4">
         
-        <div class="bg-[#F7F3E7] rounded-3xl p-6 sm:p-10 lg:p-12 border border-[#001A42]/10 shadow-xl flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+        <!-- Pastilla de Contacto Rápido (Sutil, Fina, Centrada justo antes de la tarjeta principal) -->
+        <div class="inline-flex items-center justify-center gap-2 sm:gap-3.5 px-4 sm:px-5 py-1.5 rounded-full bg-secondary-fixed/40 text-on-secondary-fixed border border-secondary-fixed shadow-sm text-[11px] sm:text-xs font-semibold max-w-full overflow-x-auto no-scrollbar">
+          
+          <!-- 1. Email con plantilla pre-estructurada -->
+          <a href="mailto:dimiyord@gmail.com?subject=Consulta%20de%20Servicios%20-%20LDS%20Automate%20%26%20Web%20Dev&body=Hola%20LDS%20Automate%20%26%20Web%20Dev%2C%0D%0A%0D%0AMe%20pongo%20en%20contacto%20con%20vosotros%20porque%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20vuestros%20servicios%3A%0D%0A%0D%0A%E2%80%A2%20Mi%20nombre%20o%20empresa%3A%20%0D%0A%E2%80%A2%20Servicio%20de%20inter%C3%A9s%20(Web%20Corporativa%2C%20WhatsApp%20IA%2C%20Agente%20de%20Voz)%3A%20%0D%0A%E2%80%A2%20Detalles%20de%20mi%20proyecto%3A%20%0D%0A%0D%0A%C2%A1Muchas%20gracias!" class="flex items-center gap-1.5 hover:text-secondary transition-colors whitespace-nowrap" title="Enviar correo a dimiyord@gmail.com con mensaje guiado">
+            <span class="material-symbols-outlined text-[14px] sm:text-[16px] text-secondary flex-shrink-0">mail</span>
+            <span>Email</span>
+          </a>
+
+          <span class="text-on-secondary-fixed/30 select-none text-[10px] sm:text-xs">•</span>
+
+          <!-- 2. Teléfono -->
+          <a href="tel:+34603786616" class="flex items-center gap-1.5 hover:text-secondary transition-colors whitespace-nowrap" title="Llamar al +34 603 78 66 16">
+            <span class="material-symbols-outlined text-[14px] sm:text-[16px] text-emerald-600 flex-shrink-0">call</span>
+            <span>+34 603 78 66 16</span>
+          </a>
+
+          <span class="text-on-secondary-fixed/30 select-none text-[10px] sm:text-xs">•</span>
+
+          <!-- 3. WhatsApp -->
+          <a href="https://wa.me/34603786616?text=Hola%20LDS,%20quiero%20informaci%C3%B3n%20sobre%20vuestros%20servicios" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 hover:text-secondary transition-colors whitespace-nowrap" title="Contactar por WhatsApp">
+            <span class="material-symbols-outlined text-[14px] sm:text-[16px] text-emerald-600 flex-shrink-0">chat</span>
+            <span class="hidden sm:inline">WhatsApp Directo</span>
+            <span class="sm:hidden">WhatsApp</span>
+          </a>
+
+        </div>
+
+        <div class="bg-[#F7F3E7] w-full rounded-3xl p-6 sm:p-10 lg:p-12 border border-[#001A42]/10 shadow-xl flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
           <!-- Hero Text (order-2 en móvil para quedar debajo de la imagen, lg:order-1 en desktop) -->
           <div class="flex-1 flex flex-col items-start gap-4 sm:gap-6 text-left order-2 lg:order-1">
 
@@ -871,8 +899,19 @@
 
       <div>
         <h4 class="text-xs uppercase tracking-widest font-bold text-white mb-3">Contacto</h4>
-        <div class="flex flex-col gap-2 text-xs text-white/70">
-          <a href="mailto:contacto@lds-ai.labs" class="hover:text-secondary-fixed transition-colors">contacto@lds-ai.labs</a>
+        <div class="flex flex-col gap-2.5 text-xs text-white/70">
+          <a href="mailto:dimiyord@gmail.com?subject=Consulta%20de%20Servicios%20-%20LDS%20Automate%20%26%20Web%20Dev&body=Hola%20LDS%20Automate%20%26%20Web%20Dev%2C%0D%0A%0D%0AMe%20pongo%20en%20contacto%20con%20vosotros%20porque%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20vuestros%20servicios%3A%0D%0A%0D%0A%E2%80%A2%20Mi%20nombre%20o%20empresa%3A%20%0D%0A%E2%80%A2%20Servicio%20de%20inter%C3%A9s%20(Web%20Corporativa%2C%20WhatsApp%20IA%2C%20Agente%20de%20Voz)%3A%20%0D%0A%E2%80%A2%20Detalles%20de%20mi%20proyecto%3A%20%0D%0A%0D%0A%C2%A1Muchas%20gracias!" class="hover:text-secondary-fixed transition-colors flex items-center gap-1.5" title="Enviar correo a dimiyord@gmail.com">
+            <span class="material-symbols-outlined text-sm text-secondary-fixed">mail</span>
+            <span>dimiyord@gmail.com</span>
+          </a>
+          <a href="tel:+34603786616" class="hover:text-secondary-fixed transition-colors flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-sm text-emerald-400">call</span>
+            <span>+34 603 78 66 16</span>
+          </a>
+          <a href="https://wa.me/34603786616?text=Hola%20LDS,%20quiero%20informaci%C3%B3n%20sobre%20vuestros%20servicios" target="_blank" rel="noopener noreferrer" class="hover:text-secondary-fixed transition-colors flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-sm text-emerald-400">chat</span>
+            <span>WhatsApp Directo</span>
+          </a>
           <a href="#auditoria" class="bg-secondary text-white py-2.5 px-4 rounded-xl text-center font-bold uppercase tracking-wider mt-2 hover:bg-secondary/90 shadow-sm transition-colors">
             Pedir Presupuesto
           </a>
@@ -882,53 +921,75 @@
     </div>
 
     <div class="max-w-container-max mx-auto mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-white/50">
-      <span>© 2026 LDS Web Studio. Todos los derechos reservados.</span>
+      <span>© 2026 LDS Automate &amp; Web Dev. Todos los derechos reservados.</span>
       <div class="flex gap-4">
-        <a href="#" class="hover:text-white">Privacidad</a>
-        <a href="#" class="hover:text-white">Términos</a>
+        <a href="privacidad.html" class="hover:text-white transition-colors">Privacidad</a>
+        <a href="terminos.html" class="hover:text-white transition-colors">Términos</a>
       </div>
     </div>
   </footer>
 
-  <!-- ==================== WIDGET FLOTANTE INFERIOR DERECHO (PRESUPUESTO SIN COMPROMISO) ==================== -->
-  <aside id="floating-quote-widget" class="fixed bottom-3 sm:bottom-6 right-3 sm:right-6 z-40 transition-all duration-300 transform translate-y-0" aria-label="Solicitar Presupuesto">
+  <!-- ==================== CONTENEDOR FLOTANTE INFERIOR DERECHO (WHATSAPP & PRESUPUESTO) ==================== -->
+  <div class="fixed bottom-3 sm:bottom-6 right-3 sm:right-6 z-40 flex flex-col items-end gap-2.5 pointer-events-none">
     
-    <!-- Mini Botón Flotante (cuando el usuario lo minimiza) -->
-    <button id="floating-quote-mini" class="hidden items-center gap-2 bg-on-secondary-fixed text-white px-3 sm:px-4 py-2 sm:py-3 rounded-full shadow-xl hover:bg-on-secondary hover:scale-105 transition-all border border-white/20">
-      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-      <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider">Presupuesto</span>
-      <span class="material-symbols-outlined text-xs sm:text-sm">bolt</span>
-    </button>
+    <!-- Botón Flotante de WhatsApp (Siempre visible y accesible) -->
+    <a 
+      href="https://wa.me/34603786616?text=Hola%20LDS,%20quiero%20informaci%C3%B3n%20sobre%20vuestros%20servicios%20de%20desarrollo%20web%20y%20automatizaci%C3%B3n" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      id="floating-whatsapp-btn"
+      class="pointer-events-auto flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white px-3 sm:px-4 py-2.5 sm:py-3 rounded-full shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-200 border border-white/30 group"
+      aria-label="Hablar por WhatsApp (+34 603 78 66 16)"
+      title="Hablar por WhatsApp (+34 603 78 66 16)"
+    >
+      <svg class="w-5 h-5 fill-current flex-shrink-0" viewBox="0 0 24 24">
+        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.392-10.416c-4.415 0-8 3.585-8 8 0 1.503.418 2.912 1.144 4.122l-1.183 4.318 4.437-1.164c1.169.673 2.518 1.057 3.957 1.057 4.415 0 8-3.585 8-8s-3.585-8-8-8zm0 14.5c-1.263 0-2.45-.371-3.447-1.009l-.247-.159-2.569.674.685-2.504-.174-.277c-.696-1.109-1.066-2.404-1.066-3.725 0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5-2.916 6.5-6.5 6.5z"/>
+      </svg>
+      <span class="text-xs font-bold whitespace-nowrap hidden sm:inline-block">WhatsApp</span>
+      <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+    </a>
 
-    <!-- Tarjeta Flotante Principal Compacta en Móvil -->
-    <div id="floating-quote-card" class="bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-3xl border border-border-subtle shadow-xl sm:shadow-2xl p-3 sm:p-5 max-w-[230px] sm:max-w-[330px] flex flex-col gap-1.5 sm:gap-2.5 relative hover:shadow-[0_20px_40px_rgba(0,26,66,0.15)] transition-all">
+    <!-- Widget de Presupuesto Flotante -->
+    <aside id="floating-quote-widget" class="pointer-events-auto transition-all duration-300 transform translate-y-0" aria-label="Solicitar Presupuesto">
       
-      <!-- Botón cerrar / minimizar -->
-      <button id="floating-quote-close" class="absolute top-2 right-2 text-on-surface-variant hover:text-on-secondary-fixed p-1 rounded-full hover:bg-[#f0f0f0] transition-colors" aria-label="Minimizar">
-        <span class="material-symbols-outlined text-[16px] sm:text-sm">close</span>
+      <!-- Mini Botón Flotante (cuando el usuario lo minimiza) -->
+      <button id="floating-quote-mini" class="hidden items-center gap-2 bg-on-secondary-fixed text-white px-3 sm:px-4 py-2 sm:py-3 rounded-full shadow-xl hover:bg-on-secondary hover:scale-105 transition-all border border-white/20">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider">Presupuesto</span>
+        <span class="material-symbols-outlined text-xs sm:text-sm">bolt</span>
       </button>
 
-      <div class="flex items-center gap-1.5 pr-5">
-        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-        <span class="text-[9px] sm:text-[10px] uppercase tracking-wider font-extrabold text-secondary">Presupuesto 24h</span>
+      <!-- Tarjeta Flotante Principal Compacta en Móvil -->
+      <div id="floating-quote-card" class="bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-3xl border border-border-subtle shadow-xl sm:shadow-2xl p-3 sm:p-5 max-w-[230px] sm:max-w-[330px] flex flex-col gap-1.5 sm:gap-2.5 relative hover:shadow-[0_20px_40px_rgba(0,26,66,0.15)] transition-all">
+        
+        <!-- Botón cerrar / minimizar -->
+        <button id="floating-quote-close" class="absolute top-2 right-2 text-on-surface-variant hover:text-on-secondary-fixed p-1 rounded-full hover:bg-[#f0f0f0] transition-colors" aria-label="Minimizar">
+          <span class="material-symbols-outlined text-[16px] sm:text-sm">close</span>
+        </button>
+
+        <div class="flex items-center gap-1.5 pr-5">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span class="text-[9px] sm:text-[10px] uppercase tracking-wider font-extrabold text-secondary">Presupuesto 24h</span>
+        </div>
+
+        <div>
+          <h4 class="font-headline font-bold text-[11px] sm:text-sm text-on-secondary-fixed leading-tight">
+            ¿Hablamos de tu web?
+          </h4>
+          <p class="hidden sm:block text-[11px] text-on-secondary mt-1 leading-relaxed">
+            Cuéntanos tu idea y te enviamos una propuesta cerrada en menos de 24h.
+          </p>
+        </div>
+
+        <a href="#auditoria" id="floating-quote-cta-btn" class="btn-lds-primary w-full py-2 sm:py-2.5 px-2.5 rounded-xl text-center font-bold text-[10px] sm:text-xs uppercase tracking-wider shadow-md hover:shadow-lg flex items-center justify-center gap-1 mt-0.5 sm:mt-1 min-h-[34px] sm:min-h-[44px]">
+          <span>Pedir Presupuesto</span>
+          <span class="material-symbols-outlined text-xs sm:text-sm">arrow_forward</span>
+        </a>
+
       </div>
+    </aside>
 
-      <div>
-        <h4 class="font-headline font-bold text-[11px] sm:text-sm text-on-secondary-fixed leading-tight">
-          ¿Hablamos de tu web?
-        </h4>
-        <p class="hidden sm:block text-[11px] text-on-secondary mt-1 leading-relaxed">
-          Cuéntanos tu idea y te enviamos una propuesta cerrada en menos de 24h.
-        </p>
-      </div>
-
-      <a href="#auditoria" id="floating-quote-cta-btn" class="btn-lds-primary w-full py-2 sm:py-2.5 px-2.5 rounded-xl text-center font-bold text-[10px] sm:text-xs uppercase tracking-wider shadow-md hover:shadow-lg flex items-center justify-center gap-1 mt-0.5 sm:mt-1 min-h-[34px] sm:min-h-[44px]">
-        <span>Pedir Presupuesto</span>
-        <span class="material-symbols-outlined text-xs sm:text-sm">arrow_forward</span>
-      </a>
-
-    </div>
-  </aside>
+  </div>
 
   <!-- Toast Container -->
   <div id="toast-container" class="toast-container"></div>
