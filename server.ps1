@@ -99,6 +99,11 @@ while ($listener.IsListening) {
         elseif ($ext -eq ".svg") { $mType = "image/svg+xml" }
         elseif ($ext -eq ".txt") { $mType = "text/plain; charset=utf-8" }
         elseif ($ext -eq ".xml") { $mType = "application/xml; charset=utf-8" }
+        elseif ($filePath -match "api-catalog") { $mType = "application/linkset+json; charset=utf-8" }
+
+        if ($ext -eq ".html" -or $localPath -eq "index.html") {
+            $response.Headers.Add("Link", '</.well-known/api-catalog>; rel="api-catalog", </robots.txt>; rel="describedby"')
+        }
 
         $bytes = [System.IO.File]::ReadAllBytes($filePath)
         $response.ContentType = $mType

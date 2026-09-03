@@ -18,6 +18,8 @@ Landing page oficial de **LDS Automate & Web Dev**. Diseño web moderno, de alto
 ├── index.html                  # Landing page principal
 ├── terminos.html               # Términos y Condiciones
 ├── privacidad.html             # Política de Privacidad
+├── .well-known/
+│   └── api-catalog             # Catálogo de APIs para agentes IA (RFC 9727 / RFC 9264 linkset)
 ├── robots.txt                  # Directivas de rastreo para bots y agentes IA (RFC 9309)
 ├── sitemap.xml                 # Mapa del sitio XML canónico (Sitemaps Protocol)
 ├── generate-sitemap.js         # Script automático de generación de sitemap en Netlify Build

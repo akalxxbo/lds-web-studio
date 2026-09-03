@@ -15,6 +15,17 @@
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+    Link = '</.well-known/api-catalog>; rel="api-catalog", </robots.txt>; rel="describedby"'
+
+[[headers]]
+  for = "/"
+  [headers.values]
+    Link = '</.well-known/api-catalog>; rel="api-catalog", </robots.txt>; rel="describedby"'
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Link = '</.well-known/api-catalog>; rel="api-catalog", </robots.txt>; rel="describedby"'
 
 [[headers]]
   for = "/robots.txt"
@@ -27,4 +38,19 @@
   [headers.values]
     Content-Type = "application/xml; charset=utf-8"
     Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/.well-known/api-catalog"
+  [headers.values]
+    Content-Type = 'application/linkset+json; profile="https://www.rfc-editor.org/info/rfc9727"'
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/.well-known/api-catalog.json"
+  [headers.values]
+    Content-Type = 'application/linkset+json; profile="https://www.rfc-editor.org/info/rfc9727"'
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "public, max-age=86400"
+
 

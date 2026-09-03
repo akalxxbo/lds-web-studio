@@ -1,0 +1,19 @@
+{
+  "linkset": [
+    {
+      "anchor": "/api/call-lead",
+      "service-doc": [
+        {
+          "href": "/",
+          "type": "text/html"
+        }
+      ],
+      "describedby": [
+        {
+          "href": "/robots.txt",
+          "type": "text/plain"
+        }
+      ]
+    }
+  ]
+}
