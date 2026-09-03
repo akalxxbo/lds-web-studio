@@ -87,6 +87,18 @@ while ($listener.IsListening) {
     $localPath = [System.Uri]::UnescapeDataString($localPath)
     $filePath = Join-Path -Path $baseDir -ChildPath $localPath
 
+    $accept = $request.Headers["Accept"]
+    $isMarkdownReq = $accept -and ($accept -match "text/markdown")
+
+    if ($isMarkdownReq -and ($localPath -eq "index.html" -or $localPath -eq "terminos.html" -or $localPath -eq "privacidad.html")) {
+        $mdName = [System.IO.Path]::GetFileNameWithoutExtension($localPath) + ".md"
+        $mdPath = Join-Path -Path $baseDir -ChildPath $mdName
+        if (Test-Path $mdPath -PathType Leaf) {
+            $filePath = $mdPath
+            $localPath = $mdName
+        }
+    }
+
     if (Test-Path $filePath -PathType Leaf) {
         $ext = [System.IO.Path]::GetExtension($filePath).ToLower()
         $mType = "text/plain"
@@ -99,13 +111,23 @@ while ($listener.IsListening) {
         elseif ($ext -eq ".svg") { $mType = "image/svg+xml" }
         elseif ($ext -eq ".txt") { $mType = "text/plain; charset=utf-8" }
         elseif ($ext -eq ".xml") { $mType = "application/xml; charset=utf-8" }
+        elseif ($ext -eq ".md") { $mType = "text/markdown; charset=utf-8" }
         elseif ($filePath -match "api-catalog") { $mType = "application/linkset+json; charset=utf-8" }
 
-        if ($ext -eq ".html" -or $localPath -eq "index.html") {
-            $response.Headers.Add("Link", '</.well-known/api-catalog>; rel="api-catalog", </robots.txt>; rel="describedby", </.well-known/mcp/server-card.json>; rel="service-desc"')
+        $response.Headers.Add("Vary", "Accept")
+
+        if ($ext -eq ".html" -or $localPath -eq "index.html" -or $ext -eq ".md") {
+            $response.Headers.Add("Link", '</.well-known/api-catalog>; rel="api-catalog", </robots.txt>; rel="describedby", </.well-known/mcp/server-card.json>; rel="service-desc", </index.md>; rel="alternate"; type="text/markdown"')
         }
 
-        $bytes = [System.IO.File]::ReadAllBytes($filePath)
+        if ($ext -eq ".md") {
+            $bytes = [System.IO.File]::ReadAllBytes($filePath)
+            $tokens = [math]::Ceiling($bytes.Length / 4)
+            $response.Headers.Add("x-markdown-tokens", "$tokens")
+        } else {
+            $bytes = [System.IO.File]::ReadAllBytes($filePath)
+        }
+
         $response.ContentType = $mType
         $response.ContentLength64 = $bytes.Length
         $response.StatusCode = 200
