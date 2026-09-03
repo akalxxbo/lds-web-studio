@@ -1,70 +1,73 @@
-# LDS Automate & Web Dev
+# LDS Automate & Web Dev | Agencia de Inteligencia Artificial (IA) & Desarrollo Web
 
-> Especialistas en diseño y desarrollo de páginas web ultra-rápidas, landing pages de alto impacto y ecosistemas digitales potenciados con Supabase, automatizaciones n8n e Inteligencia Artificial.
+> **Agencia de Inteligencia Artificial (IA), desarrollo web de alto rendimiento y automatizaciones para empresas.** Especialistas en crear páginas web ultra-rápidas, landing pages de alta conversión, flujos de automatización con n8n, bases de datos seguras con Supabase y agentes telefónicos de voz con IA en Valencia, Requena, Utiel y toda España.
 
-- **Ubicación:** Requena / Valencia, España. Cobertura nacional e internacional.
+- **Sede Principal:** Requena y Utiel (Valencia, España).
+- **Área de Cobertura:** Comarca Utiel-Requena, Valencia capital y área metropolitana, Comunidad Valenciana y proyectos a medida en toda España.
 - **Contacto Directo:**
   - **Email:** [dimiyord@gmail.com](mailto:dimiyord@gmail.com)
   - **Teléfono / WhatsApp:** [+34 603 78 66 16](https://wa.me/34603786616)
   - **Web Oficial:** [https://lds-web-studio.netlify.app](https://lds-web-studio.netlify.app)
-  - **Auditoría Gratuita:** Solicita un diagnóstico técnico previo sin coste a través de nuestro formulario web o API.
+  - **Auditoría Gratuita:** Diagnóstico técnico y plan de digitalización sin coste.
 
 ---
 
-## 1. Servicios y Soluciones Principales
+## 1. Servicios Especializados de Agencia IA
 
-### A. Landing Pages de Alta Conversión & Webs Corporativas
-- **Velocidad Extrema:** Tiempos de carga inferiores a 1.5 segundos. Rendimiento optimizado con puntuaciones de 95+ en Google Core Web Vitals.
-- **Sin Dependencias Pesadas:** Desarrollo en HTML5 semántico, Tailwind CSS y JavaScript vanilla optimizado. Sin plantillas genéricas ni CMS vulnerables como WordPress.
-- **Propiedad Total:** El cliente es 100% propietario del código fuente, contenidos y dominio una vez finalizado el proyecto, sin cuotas cautivas ni comisiones ocultas.
-- **Optimización Mobile-First:** Diseños fluidos, interactivos y con estética premium adaptados a pantallas móviles y de escritorio.
+### A. Agencia de Inteligencia Artificial & Automatización con n8n
+- **Flujos de Trabajo Autónomos:** Conexión de CRM, pasarelas de pago, facturación y almacenamiento de leads en Supabase (PostgreSQL) con seguridad Row Level Security (RLS).
+- **Chatbots y Atención por WhatsApp Business:** Agentes IA capaces de responder consultas, enviar presupuestos, verificar inventario y agendar reservas sin intervención humana las 24 horas del día.
+- **Sin Cuotas Mensuales Cautivas:** Infraestructura basada en código abierto y APIs eficientes, evitando las tarifas desorbitadas de herramientas tradicionales.
 
-### B. Automatización de Procesos Empresariales (n8n & Webhooks)
-- **Workflows a Medida:** Integración de procesos de ventas, facturación, CRM y mensajería automática sin las limitaciones de coste de Zapier o Make.
-- **Conectividad Total:** Sincronización bidireccional entre WhatsApp Business API, Telegram, Google Sheets, Notion y bases de datos relacionales.
-- **Bases de Datos Robustas con Supabase:** Arquitectura backend segura con PostgreSQL y Row Level Security (RLS) para proteger los datos de tus clientes.
+### B. Agentes Telefónicos de Voz con IA (Voice AI)
+- **Recepcionistas Virtuales Autónomos:** Asistentes de voz ultrarrealistas (Retell AI, Bland AI, Vapi) que atienden y realizan llamadas en lenguaje natural fluido.
+- **Cualificación Automática de Prospectos:** El agente identifica el presupuesto, necesidad y urgencia del cliente antes de transferir la llamada a tu equipo comercial o reservar la cita en Google Calendar.
+- **Casos de Éxito en Sectores Locales:** Clínicas dentales y de estética, talleres mecánicos, restaurantes y hostelería, empresas de reformas y despachos profesionales en Valencia, Requena y Utiel.
 
-### C. Agentes de Inteligencia Artificial & Telefonía de Voz
-- **Agentes Conversacionales:** Chatbots y asistentes entrenados con la base de conocimiento de tu negocio para responder dudas en tiempo real 24/7.
-- **Telefonía Autónoma de Voz (Voice AI):** Agentes de voz basados en modelos avanzados (Retell AI, Bland AI, Vapi) capaces de realizar y recibir llamadas telefónicas en lenguaje natural, agendar citas y calificar leads.
-- **Filtrado Inteligente de Prospectos:** Captación automática de necesidades y presupuestos antes de derivar la llamada a tu equipo comercial.
-
----
-
-## 2. Metodología de Trabajo y Entregas
-
-1. **Auditoría Técnica Inicial (Gratis):** Analizamos tu presencia online, objetivos comerciales y puntos de fuga de clientes.
-2. **Diseño y Prototipado Interactivo:** Presentamos la propuesta estética y funcional adaptada a tu identidad de marca.
-3. **Desarrollo y Conexión Backend:** Construcción limpia de la web, integración de bases de datos, webhooks y protecciones anti-spam.
-4. **Pruebas de Rendimiento y Lanzamiento:** Verificación de velocidad, SEO técnico (robots.txt, sitemap, etiquetas canónicas) y puesta en marcha con dominio y SSL en 5 a 10 días laborables.
+### C. Desarrollo Web Moderno & Landing Pages de Alta Conversión
+- **Velocidad Extrema (<1.5s):** Construcción con HTML5 semántico, Tailwind CSS y JavaScript vanilla optimizado, logrando puntuaciones de 95+ en Google Core Web Vitals.
+- **Sin WordPress ni Plugins Pesados:** Cero vulnerabilidades, sin sobrecostes de mantenimiento ni lentitud de carga.
+- **100% de tu Propiedad:** Código fuente entregado al cliente sin comisiones por venta ni ataduras.
+- **Optimización para Google (SEO On-Page & Local):** Datos estructurados Schema.org, metadatos Open Graph, sitemap canónico y robots.txt conforme a estándares RFC.
 
 ---
 
-## 3. Casos de Éxito y Clientes
+## 2. Cobertura Geográfica y Soluciones por Zona
+
+- **Requena y Utiel:** Digitalización de comercios, bodegas de la DO Utiel-Requena, hostelería local y empresas de servicios con soporte presencial y cercano.
+- **Valencia y Comunidad Valenciana:** Desarrollo de infraestructuras digitales para startups, clínicas, concesionarios y pymes de Valencia capital, Torrent, Paterna, Alzira, Gandía, Castellón y Alicante.
+- **España y Proyectos Remotos:** Entrega ágil de landing pages y automatizaciones en 5 a 10 días laborables para clientes de Madrid, Barcelona, Sevilla, Bilbao y cualquier punto de la geografía española.
+
+---
+
+## 3. Casos de Éxito y Marcas Clientes
 
 - **Garden by Valentina:** Boutique de moda y complementos con catálogo dinámico y experiencia visual inmersiva. [Ver proyecto](https://gardenbyvalentina.netlify.app/)
 - **The Parce Barber:** Barbería urbana con sistema de reservas directas y diseño dark de alto impacto. [Ver proyecto](https://theparcebarber.netlify.app/)
-- **Instalaciones Eléctricas Pardo Bosque:** Web corporativa técnica para empresa de instalaciones eléctricas y climatización. [Ver proyecto](https://pardobosque.netlify.app/)
-- **Bar Pop's:** Web gastronómica de tapas y hamburguesas con carta digital QR interactiva y reservas. [Ver proyecto](https://barpops.netlify.app/)
+- **Instalaciones Eléctricas Pardo Bosque:** Web corporativa técnica para empresa de instalaciones eléctricas y climatización en la Comunidad Valenciana. [Ver proyecto](https://pardobosque.netlify.app/)
+- **Bar Pop's:** Web gastronómica con carta digital interactiva QR y sistema de reservas. [Ver proyecto](https://barpops.netlify.app/)
+- **Vístete De Nuevo:** Proyecto de moda y sostenibilidad con presencia online optimizada.
 
 ---
 
 ## 4. Preguntas Frecuentes (FAQ)
 
-- **¿Cuánto tiempo tarda el desarrollo de una landing page?**
-  Normalmente entregamos el proyecto completo y operativo entre 5 y 10 días laborables desde la recepción de los materiales.
-- **¿Tendré que pagar cuotas mensuales obligatorias?**
-  No. A diferencia de agencias con modelos de suscripción forzosa, una vez abonado el proyecto la web te pertenece al 100%. Solo pagas tu hosting y dominio anual (o puedes gestionarlo tú mismo).
-- **¿Cómo se conectan los leads con mi teléfono o correo?**
-  A través de nuestras integraciones automáticas con n8n y Supabase, recibes cada solicitud de contacto al instante por WhatsApp, email o directamente en tu CRM.
+- **¿Por qué contratar una Agencia IA en lugar de una agencia de marketing tradicional?**
+  Las agencias tradicionales se centran únicamente en diseño visual o publicidad cara. Como Agencia IA, en LDS implementamos tecnología que trabaja para ti: captación automática, filtrado con agentes de voz, respuestas instantáneas en WhatsApp y webs que cargan en menos de 1.5 segundos.
+- **¿Cuánto cuesta una web o automatización con IA?**
+  Trabajamos con presupuestos cerrados previos sin sorpresas. Elaboramos propuestas a medida en menos de 24 horas según el alcance (desde landing pages ligeras hasta ecosistemas completos con base de datos y telefonía IA).
+- **¿Cuánto tiempo se tarda en poner en marcha el proyecto?**
+  El plazo medio de entrega es de 5 a 10 días laborables con la estructura definida.
+- **¿Tendré que pagar cuotas obligatorias a LDS?**
+  No. Una vez finalizado el desarrollo, el código y la plataforma son 100% de tu propiedad.
 
 ---
 
-## 5. Endpoints y Recursos para Agentes IA
+## 5. Endpoints Técnicos para Agentes IA y Desarrolladores
 
 - **Catálogo de APIs (RFC 9727):** `https://lds-web-studio.netlify.app/.well-known/api-catalog`
 - **MCP Server Card (SEP-1649):** `https://lds-web-studio.netlify.app/.well-known/mcp/server-card.json`
-- **Transporte MCP:** `https://lds-web-studio.netlify.app/mcp`
+- **Endpoint MCP:** `https://lds-web-studio.netlify.app/mcp`
 - **Robots.txt (RFC 9309):** `https://lds-web-studio.netlify.app/robots.txt`
-- **Sitemap canónico:** `https://lds-web-studio.netlify.app/sitemap.xml`
-- **Lead Intake Endpoint:** `POST https://lds-web-studio.netlify.app/api/call-lead` (Acepta `fullName`, `email`, `phone`, `company`, `serviceInterest`, `projectDescription`).
+- **Sitemap XML:** `https://lds-web-studio.netlify.app/sitemap.xml`
+- **API Captación de Leads:** `POST https://lds-web-studio.netlify.app/api/call-lead`
