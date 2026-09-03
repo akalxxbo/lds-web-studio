@@ -18,8 +18,12 @@ Landing page oficial de **LDS Automate & Web Dev**. Diseño web moderno, de alto
 ├── index.html                  # Landing page principal
 ├── terminos.html               # Términos y Condiciones
 ├── privacidad.html             # Política de Privacidad
+├── robots.txt                  # Directivas de rastreo para bots y agentes IA (RFC 9309)
+├── sitemap.xml                 # Mapa del sitio XML canónico (Sitemaps Protocol)
+├── generate-sitemap.js         # Script automático de generación de sitemap en Netlify Build
+├── generate-sitemap.ps1        # Script PowerShell de generación de sitemap para local
 ├── styles.css                  # Estilos personalizados y utilidades de animación
-├── netlify.toml                # Configuración de despliegue y cabeceras de seguridad
+├── netlify.toml                # Configuración de despliegue, build y cabeceras de seguridad
 ├── logo.png                    # Logotipo LDS
 ├── logo_hero.png               # Logotipo adaptado para Hero
 ├── .env.example                # Variables de entorno de ejemplo

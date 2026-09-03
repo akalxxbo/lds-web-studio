@@ -97,6 +97,8 @@ while ($listener.IsListening) {
         elseif ($ext -eq ".png") { $mType = "image/png" }
         elseif ($ext -eq ".jpg" -or $ext -eq ".jpeg") { $mType = "image/jpeg" }
         elseif ($ext -eq ".svg") { $mType = "image/svg+xml" }
+        elseif ($ext -eq ".txt") { $mType = "text/plain; charset=utf-8" }
+        elseif ($ext -eq ".xml") { $mType = "application/xml; charset=utf-8" }
 
         $bytes = [System.IO.File]::ReadAllBytes($filePath)
         $response.ContentType = $mType

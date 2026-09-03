@@ -1,0 +1,36 @@
+# robots.txt for LDS Automate & Web Dev
+# Conforms to RFC 9309: Robots Exclusion Protocol (https://www.rfc-editor.org/rfc/rfc9309)
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /.netlify/
+
+# Directivas explicitas para agentes y rastreadores de Inteligencia Artificial
+User-agent: GPTBot
+Allow: /
+Disallow: /api/
+Disallow: /.netlify/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /api/
+Disallow: /.netlify/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /api/
+Disallow: /.netlify/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /api/
+Disallow: /.netlify/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /api/
+Disallow: /.netlify/
+
+# Sitemap index
+Sitemap: https://lds-web-studio.netlify.app/sitemap.xml
