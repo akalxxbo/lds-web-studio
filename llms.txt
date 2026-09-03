@@ -1,13 +1,13 @@
-# LDS Automate & Web Dev | Agencia de Inteligencia Artificial & Desarrollo Web
+﻿# LDS Automate & Web Dev | Agencia de Inteligencia Artificial & Desarrollo Web
 
 > Agencia líder en Inteligencia Artificial (IA), automatización empresarial con n8n y desarrollo web moderno de alto rendimiento. Sede en Requena y Utiel (Valencia, España) con servicio y soporte para clientes de toda la Comunidad Valenciana y España.
 
 ## Enlaces Principales
 
-- [Página Principal & Servicios de Agencia IA](https://lds-web-studio.netlify.app/index.md): Resumen técnico de servicios de Inteligencia Artificial, agentes de voz telefónicos, chatbots para WhatsApp, flujos n8n y páginas web en Valencia, Requena, Utiel y ámbito nacional.
-- [Términos y Condiciones](https://lds-web-studio.netlify.app/terminos.md): Marco legal regulado según la LSSI-CE y propiedad íntegra de entregables.
-- [Política de Privacidad](https://lds-web-studio.netlify.app/privacidad.md): Política de protección de datos según el RGPD europeo.
-- [Catálogo de APIs (RFC 9727)](https://lds-web-studio.netlify.app/.well-known/api-catalog): Catálogo formal de endpoints y servicios para agentes IA.
-- [MCP Server Card](https://lds-web-studio.netlify.app/.well-known/mcp/server-card.json): Ficha de servidor Model Context Protocol (SEP-1649).
-- [Robots.txt (RFC 9309)](https://lds-web-studio.netlify.app/robots.txt): Reglas de rastreo para bots de búsqueda e indexación de IA.
-- [Sitemap](https://lds-web-studio.netlify.app/sitemap.xml): Listado XML canónico de URLs públicas del sitio.
+- [Página Principal & Servicios de Agencia IA](https://ldsagency.netlify.app/index.md): Resumen técnico de servicios de Inteligencia Artificial, agentes de voz telefónicos, chatbots para WhatsApp, flujos n8n y páginas web en Valencia, Requena, Utiel y ámbito nacional.
+- [Términos y Condiciones](https://ldsagency.netlify.app/terminos.md): Marco legal regulado según la LSSI-CE y propiedad íntegra de entregables.
+- [Política de Privacidad](https://ldsagency.netlify.app/privacidad.md): Política de protección de datos según el RGPD europeo.
+- [Catálogo de APIs (RFC 9727)](https://ldsagency.netlify.app/.well-known/api-catalog): Catálogo formal de endpoints y servicios para agentes IA.
+- [MCP Server Card](https://ldsagency.netlify.app/.well-known/mcp/server-card.json): Ficha de servidor Model Context Protocol (SEP-1649).
+- [Robots.txt (RFC 9309)](https://ldsagency.netlify.app/robots.txt): Reglas de rastreo para bots de búsqueda e indexación de IA.
+- [Sitemap](https://ldsagency.netlify.app/sitemap.xml): Listado XML canónico de URLs públicas del sitio.

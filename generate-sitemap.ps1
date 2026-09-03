@@ -1,5 +1,5 @@
-# Script para generar /sitemap.xml y sincronizarlo con /robots.txt en entornos locales
-$baseUrl = if ($env:SITE_URL) { $env:SITE_URL } elseif ($env:URL) { $env:URL } else { "https://lds-web-studio.netlify.app" }
+﻿# Script para generar /sitemap.xml y sincronizarlo con /robots.txt en entornos locales
+$baseUrl = if ($env:SITE_URL) { $env:SITE_URL } elseif ($env:URL) { $env:URL } else { "https://ldsagency.netlify.app" }
 $baseUrl = $baseUrl.TrimEnd('/')
 $today = (Get-Date).ToString("yyyy-MM-dd")
 

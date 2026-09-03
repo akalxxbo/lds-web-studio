@@ -1,4 +1,4 @@
-# LDS Automate & Web Dev | Agencia de Inteligencia Artificial (IA) & Desarrollo Web
+﻿# LDS Automate & Web Dev | Agencia de Inteligencia Artificial (IA) & Desarrollo Web
 
 > **Agencia de Inteligencia Artificial (IA), desarrollo web de alto rendimiento y automatizaciones para empresas.** Especialistas en crear páginas web ultra-rápidas, landing pages de alta conversión, flujos de automatización con n8n, bases de datos seguras con Supabase y agentes telefónicos de voz con IA en Valencia, Requena, Utiel y toda España.
 
@@ -7,7 +7,7 @@
 - **Contacto Directo:**
   - **Email:** [dimiyord@gmail.com](mailto:dimiyord@gmail.com)
   - **Teléfono / WhatsApp:** [+34 603 78 66 16](https://wa.me/34603786616)
-  - **Web Oficial:** [https://lds-web-studio.netlify.app](https://lds-web-studio.netlify.app)
+  - **Web Oficial:** [https://ldsagency.netlify.app](https://ldsagency.netlify.app)
   - **Auditoría Gratuita:** Diagnóstico técnico y plan de digitalización sin coste.
 
 ---
@@ -65,9 +65,9 @@
 
 ## 5. Endpoints Técnicos para Agentes IA y Desarrolladores
 
-- **Catálogo de APIs (RFC 9727):** `https://lds-web-studio.netlify.app/.well-known/api-catalog`
-- **MCP Server Card (SEP-1649):** `https://lds-web-studio.netlify.app/.well-known/mcp/server-card.json`
-- **Endpoint MCP:** `https://lds-web-studio.netlify.app/mcp`
-- **Robots.txt (RFC 9309):** `https://lds-web-studio.netlify.app/robots.txt`
-- **Sitemap XML:** `https://lds-web-studio.netlify.app/sitemap.xml`
-- **API Captación de Leads:** `POST https://lds-web-studio.netlify.app/api/call-lead`
+- **Catálogo de APIs (RFC 9727):** `https://ldsagency.netlify.app/.well-known/api-catalog`
+- **MCP Server Card (SEP-1649):** `https://ldsagency.netlify.app/.well-known/mcp/server-card.json`
+- **Endpoint MCP:** `https://ldsagency.netlify.app/mcp`
+- **Robots.txt (RFC 9309):** `https://ldsagency.netlify.app/robots.txt`
+- **Sitemap XML:** `https://ldsagency.netlify.app/sitemap.xml`
+- **API Captación de Leads:** `POST https://ldsagency.netlify.app/api/call-lead`

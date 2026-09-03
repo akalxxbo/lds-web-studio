@@ -1,4 +1,4 @@
-exports.handler = async (event, context) => {
+﻿exports.handler = async (event, context) => {
   const headers = {
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Headers": "Content-Type, Authorization, mcp-session-id",
@@ -139,7 +139,7 @@ exports.handler = async (event, context) => {
                     contact: {
                       email: "dimiyord@gmail.com",
                       phone: "+34 603 78 66 16",
-                      website: "https://lds-web-studio.netlify.app"
+                      website: "https://ldsagency.netlify.app"
                     }
                   }, null, 2)
                 }

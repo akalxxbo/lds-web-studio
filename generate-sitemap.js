@@ -1,8 +1,8 @@
-const fs = require('fs');
+﻿const fs = require('fs');
 const path = require('path');
 
 // Determine base URL: SITE_URL > Netlify URL > default fallback
-const rawBaseUrl = process.env.SITE_URL || process.env.URL || 'https://lds-web-studio.netlify.app';
+const rawBaseUrl = process.env.SITE_URL || process.env.URL || 'https://ldsagency.netlify.app';
 const baseUrl = rawBaseUrl.replace(/\/+$/, '');
 
 const today = new Date().toISOString().split('T')[0];

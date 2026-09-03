@@ -1,4 +1,4 @@
-# robots.txt for LDS Automate & Web Dev
+﻿# robots.txt for LDS Automate & Web Dev
 # Conforms to RFC 9309: Robots Exclusion Protocol (https://www.rfc-editor.org/rfc/rfc9309)
 
 User-agent: *
@@ -33,4 +33,4 @@ Disallow: /api/
 Disallow: /.netlify/
 
 # Sitemap index
-Sitemap: https://lds-web-studio.netlify.app/sitemap.xml
+Sitemap: https://ldsagency.netlify.app/sitemap.xml
