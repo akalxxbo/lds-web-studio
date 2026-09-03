@@ -8,6 +8,11 @@
   to = "/.netlify/functions/call-lead"
   status = 200
 
+[[redirects]]
+  from = "/mcp"
+  to = "/.netlify/functions/mcp"
+  status = 200
+
 [[headers]]
   for = "/*"
   [headers.values]
@@ -15,17 +20,17 @@
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Link = '</.well-known/api-catalog>; rel="api-catalog", </robots.txt>; rel="describedby"'
+    Link = '</.well-known/api-catalog>; rel="api-catalog", </robots.txt>; rel="describedby", </.well-known/mcp/server-card.json>; rel="service-desc"'
 
 [[headers]]
   for = "/"
   [headers.values]
-    Link = '</.well-known/api-catalog>; rel="api-catalog", </robots.txt>; rel="describedby"'
+    Link = '</.well-known/api-catalog>; rel="api-catalog", </robots.txt>; rel="describedby", </.well-known/mcp/server-card.json>; rel="service-desc"'
 
 [[headers]]
   for = "/index.html"
   [headers.values]
-    Link = '</.well-known/api-catalog>; rel="api-catalog", </robots.txt>; rel="describedby"'
+    Link = '</.well-known/api-catalog>; rel="api-catalog", </robots.txt>; rel="describedby", </.well-known/mcp/server-card.json>; rel="service-desc"'
 
 [[headers]]
   for = "/robots.txt"
@@ -52,5 +57,20 @@
     Content-Type = 'application/linkset+json; profile="https://www.rfc-editor.org/info/rfc9727"'
     Access-Control-Allow-Origin = "*"
     Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/.well-known/mcp/server-card.json"
+  [headers.values]
+    Content-Type = "application/json; charset=utf-8"
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/.well-known/mcp.json"
+  [headers.values]
+    Content-Type = "application/json; charset=utf-8"
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "public, max-age=86400"
+
 
 

@@ -19,7 +19,9 @@ Landing page oficial de **LDS Automate & Web Dev**. Diseño web moderno, de alto
 ├── terminos.html               # Términos y Condiciones
 ├── privacidad.html             # Política de Privacidad
 ├── .well-known/
-│   └── api-catalog             # Catálogo de APIs para agentes IA (RFC 9727 / RFC 9264 linkset)
+│   ├── api-catalog             # Catálogo de APIs para agentes IA (RFC 9727 / RFC 9264 linkset)
+│   └── mcp/
+│       └── server-card.json    # MCP Server Card (SEP-1649) para descubrimiento de servidor MCP
 ├── robots.txt                  # Directivas de rastreo para bots y agentes IA (RFC 9309)
 ├── sitemap.xml                 # Mapa del sitio XML canónico (Sitemaps Protocol)
 ├── generate-sitemap.js         # Script automático de generación de sitemap en Netlify Build
@@ -31,7 +33,8 @@ Landing page oficial de **LDS Automate & Web Dev**. Diseño web moderno, de alto
 ├── .env.example                # Variables de entorno de ejemplo
 └── netlify/
     └── functions/
-        └── call-lead.js        # Netlify Serverless Function para webhook de leads
+        ├── call-lead.js        # Netlify Serverless Function para webhook de leads
+        └── mcp.js              # Netlify Serverless Function para protocolo MCP JSON-RPC
 ```
 
 ## ⚙️ Despliegue en Netlify

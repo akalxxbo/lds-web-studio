@@ -1,0 +1,26 @@
+{
+  "$schema": "https://modelcontextprotocol.io/schemas/mcp-server-card/v1.json",
+  "serverInfo": {
+    "name": "lds-automate-web-dev",
+    "title": "LDS Automate & Web Dev MCP Server",
+    "version": "1.0.0",
+    "description": "Servidor MCP oficial de LDS Automate & Web Dev para descubrimiento de soluciones de desarrollo web moderno, landing pages de alta conversion, automatizaciones con n8n y solicitud de auditorias tecnicas gratuitas."
+  },
+  "endpoint": "/mcp",
+  "transport": {
+    "type": "http",
+    "endpoint": "/mcp"
+  },
+  "capabilities": {
+    "tools": {
+      "listChanged": false
+    },
+    "resources": {
+      "subscribe": false,
+      "listChanged": false
+    },
+    "prompts": {
+      "listChanged": false
+    }
+  }
+}

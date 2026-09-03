@@ -102,7 +102,7 @@ while ($listener.IsListening) {
         elseif ($filePath -match "api-catalog") { $mType = "application/linkset+json; charset=utf-8" }
 
         if ($ext -eq ".html" -or $localPath -eq "index.html") {
-            $response.Headers.Add("Link", '</.well-known/api-catalog>; rel="api-catalog", </robots.txt>; rel="describedby"')
+            $response.Headers.Add("Link", '</.well-known/api-catalog>; rel="api-catalog", </robots.txt>; rel="describedby", </.well-known/mcp/server-card.json>; rel="service-desc"')
         }
 
         $bytes = [System.IO.File]::ReadAllBytes($filePath)
